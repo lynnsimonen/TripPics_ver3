@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TripPics - First Vue Quasar App</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- fonts / icons / css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp"
+          rel="stylesheet" type="text/css">
+
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^6.0.0/css/materialdesignicons.min.css" rel="stylesheet"
+          type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons.min.css" rel="stylesheet"
+          type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/eva-icons@^1.0.0/style/eva-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css" rel="stylesheet"
+          type="text/css">
+    <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+          rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.11.7/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+
+<!--BODY-->
+<body>
+<div id="app">
+    <q-layout class="shadow-2 rounded-borders">
+
+        <!--        HEADER-->
+        <q-header elevated>,
+            <q-toolbar>
+                    <q-btn class="q-mr-sm" dense flat icon="menu" round></q-btn>
+                <q-toolbar-title class="q-mx-lg q-mb-md toolbar-travelpics">
+                    <q-avatar size="150px">
+                        <img src="images/smilingWorld250px.jpg">
+                    </q-avatar>
+                    TripPics
+                    <q-avatar size="150px">
+                        <q-icon name="camera"></q-icon>
+                    </q-avatar>
+                </q-toolbar-title>
+
+                <q-btn class="account-avatar-btn q-mr-sm " dense flat round>
+                    <q-avatar class="" icon="account_circle"></q-avatar>
+                </q-btn>
+
+            </q-toolbar>
+        </q-header>
+
+        <!--            MAIN BODY-->
+
+        <q-page-container>
+
+            <!-- TABS -->
+            <q-tabs
+                    v-model="tab"
+                    align="left"
+                    class="bg-grey text-white shadow-2"
+                    dense
+                    narrow-indicator
+            >
+                <q-tab label="All Trips" name="all-trips"></q-tab>
+                <q-tab label="favorites" name="favorites">
+                    <q-icon color="yellow" name="star"></q-icon>
+                </q-tab>
+                <q-tab label="create trip" name="create-new-trip">
+                </q-tab>
+            </q-tabs>
+
+            <q-page class="q-pa-md">
+
+                <!--                CREATE TRIP - TAB PANEL -->
+                <q-tab-panel name="create-trip">
+                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+
+                        <q-input v-model="text" class="col-8" label="Trip Title" outlined>
+                            <q-icon class="favorite-star" name="star-border"></q-icon>
+                        </q-input>
+
+                        <q-input v-model="text" class="col-2" label="Arrival Date" outlined>
+                            <template v-slot:append>
+                                <q-icon name="event"></q-icon>
+                            </template>
+                        </q-input>
+
+                        <q-input v-model="text" class="col-2" label="Departure Date" outlined>
+                            <template v-slot:append>
+                                <q-icon name="event"></q-icon>
+                            </template>
+                        </q-input>
+
+                        <q-input v-model="text" class="col-12" label="Trip Description" outlined>
+                        </q-input>
+
+
+                        <div class="q-pa-md col-3">
+                            <q-uploader
+                                    label="Upload photo"
+                                    multiple
+                                    style="max-width: 300px; width: 100%"
+                                    url="http://localhost:4444/upload"
+                            />
+                        </div>
+                        <div class="q-pa-md col-3">
+                            <q-uploader
+                                    batch
+                                    label="Batch upload"
+                                    multiple
+                                    style="max-width: 300px; width: 100%"
+                                    url="http://localhost:4444/upload"
+                            ></q-uploader>
+                        </div>
+
+                        <div class="q-pa-md col-6">
+                            <q-carousel
+                                    swipeable
+                                    animated
+                                    v-model="slide"
+                                    thumbnails
+                                    infinite
+                                    height="350px"
+                                    width="auto"
+                            >
+                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg" ></q-carousel-slide>
+                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg"></q-carousel-slide>
+                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg" ></q-carousel-slide>
+                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg" ></q-carousel-slide>
+                            </q-carousel>
+                        </div>
+
+                    </div>
+                </q-tab-panel>
+
+                <!--                END OF TABS -->
+            </q-page>
+        </q-page-container>
+
+
+        <!--FOOTER-->
+        <q-footer elevated>
+            <q-toolbar>
+                <q-toolbar-title>Footer</q-toolbar-title>
+            </q-toolbar>
+        </q-footer>
+    </q-layout>
+</div>
+
+<!-- jquery -->
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<!-- Vue Application -->
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quasar@2.11.7/dist/quasar.umd.prod.js"></script>
+
+<!--This App-->
+<script src="js/app.js"></script>
+<script src="js/app-quasar.js"></script>
+<script src="js/components/tripList-component.js"></script>
+<script src="js/components/tripTrip-component.js"></script>
+
+<script>
+    app.use(Quasar)
+    app.mount('#app')
+</script>
+<!--SCRIPT FOR IMAGE CAROUSEL-->
+<!--<script TYPE="module">-->
+<!--    import { ref } from 'vue'-->
+
+<!--    export default {-->
+<!--        setup () {-->
+<!--            return {-->
+<!--                slide: ref(1)-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.4.6/dist/es-module-shims.js">
+
+</script>
+<script type="importmap">
+    { "imports": { "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js" } }
+</script>
+
+<script type="module">
+    import { ref } from 'vue'
+
+    export default {
+        setup () {
+            return {
+                slide: ref(0)
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

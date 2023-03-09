@@ -1,0 +1,49 @@
+.q-header {
+  background-image: linear-gradient(to left, #02a0e7, #fff);
+  //text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #02a0e7;
+  font-weight: bolder;
+}
+.toolbar-travelpics {
+  color: #02a0e7;
+  //text-shadow: -1px -1px 0 #0c638c, 1px -1px 0 #0c638c, -1px 1px 0 #0c638c, 1px 1px 0 #0c638c;
+  font-size: 48px;
+  font-family: "Bookman Old Style";
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.account-avatar-btn {
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  vertical-align: top;
+}
+
+.account-avatar{
+  font-size: 80px;
+}
+
+q-input{
+  color: #3e92cc;
+}
+
+q-icon, {
+  color: #3e92cc;
+}
+
+//Trip Description labels
+.q-field__label {
+  color:#3e92cc;
+}
+
+q-tabs {
+  font-weight: bolder;
+}
+
+.favorite-star {
+  color: grey;
+  display: flex;
+  justify-content: flex-start;
+
+}

@@ -1,0 +1,48 @@
+.q-header {
+  background-image: linear-gradient(to left, #02a0e7, #fff);
+  color: #02a0e7;
+  font-weight: bolder;
+}
+
+.toolbar-travelpics {
+  color: #02a0e7;
+  font-size: 48px;
+  font-family: "Bookman Old Style";
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.account-avatar-btn {
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  vertical-align: top;
+}
+
+.account-avatar {
+  font-size: 80px;
+}
+
+q-input {
+  color: #3e92cc;
+}
+
+q-icon {
+  color: #3e92cc;
+}
+
+.q-field__label {
+  color: #3e92cc;
+}
+
+q-tabs {
+  font-weight: bolder;
+}
+
+.favorite-star {
+  color: grey;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/*# sourceMappingURL=app.css.map */
