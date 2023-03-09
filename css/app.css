@@ -43,10 +43,36 @@ q-tabs {
   color: yellow;
 }
 
+.q-tab__label {
+  text-align: left;
+}
+
 .q-field__native {
   color: black;
   display: flex;
   justify-content: flex-end;
+}
+
+.photo-groups {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.photo-group {
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.photo-group-box {
+  display: flex;
+  justify-content: center;
+}
+
+.q-toolbar {
+  display: flex;
+  align-items: flex-start;
 }
 
 /*# sourceMappingURL=app.css.map */
