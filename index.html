@@ -35,9 +35,9 @@
         <q-header elevated>,
             <q-toolbar>
                 <div class="menu-box">
-                <q-btn class="q-mr-sm" dense flat round>
-                    <q-icon name="menu" size="3rem"></q-icon>
-                </q-btn>
+                    <q-btn class="q-mr-sm" dense flat round>
+                        <q-icon name="menu" size="3rem"></q-icon>
+                    </q-btn>
                 </div>
                 <q-toolbar-title class="q-mx-lg q-mb-md toolbar-travelpics">
                     <q-avatar size="150px">
@@ -47,9 +47,9 @@
                 </q-toolbar-title>
 
                 <div class="account-box">
-                <q-btn class="account-avatar-btn q-mr-sm " dense flat round>
-                    <q-icon name="account_circle" size="3rem"></q-icon>
-                </q-btn>
+                    <q-btn class="account-avatar-btn q-mr-sm " dense flat round>
+                        <q-icon name="account_circle" size="3rem"></q-icon>
+                    </q-btn>
                 </div>
 
             </q-toolbar>
@@ -75,352 +75,373 @@
                 </q-tab>
             </q-tabs>
 
-            <q-page class="q-pa-md">
+            <!--                ALL TRIPS - TAB PANEL -->
+            <q-tab-panel :name="alltrips">
+                <div class="trip-headers row q-col-gutter-x-xs q-col-gutter-y-lg">
+                    <span class="trip-title-hdr col-8"> Trip Title
+                     <q-icon class="sort" name="import_export"></q-icon>
+                    </span>
 
-                <!--                ALL TRIPS - TAB PANEL -->
-                <q-tab-panel :name="alltrips">
-                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
-                        <span class="col-8">Trip to somewhere great</span>
-                        <span class="col-2"> 03/11/2018</span>
-                        <span class="col-2"> 03/21/2018</span>
-                        <p>We went all over the place and had such a great time! Want to do it again and go here.
-                            We went all over the place and had such a great time! Want to do it again and go here.
-                            We went all over the place and had such a great time! Want to do it again and go here.
-                            We went all over the place and had such a great time! Want to do it again and go here.
-                            We went all over the place and had such a great time! Want to do it again and go here.</p>
+                    <span class="date-hdr col-2">Arrival
+                    <q-icon class="sort" name="import_export"></q-icon>
+                    </span>
+
+                    <span class="date-hdr col-2">Departure
+                    <q-icon class="sort" name="import_export"></q-icon>
+                    </span>
+                </div>
+                <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                    <span class="trip-title col-8">
+                         <q-icon name="expand_more"></q-icon>
+                        <q-icon name="star_outline"></q-icon>
+                        Trip to somewhere great
+                    </span>
+                    <span class="date col-2"> 03/11/2018</span>
+                    <span class="date col-2"> 03/21/2018</span>
+                    <span class="captains-log col-2">Captain's Log</span>
+                    <p class="log">We went all over the place and had such a great time! Want to do it again and go here.
+                        We went all over the place and had such a great time! Want to do it again and go here.
+                        We went all over the place and had such a great time! Want to do it again and go here.
+                        We went all over the place and had such a great time! Want to do it again and go here.
+                        We went all over the place and had such a great time! Want to do it again and go here.</p>
+                </div>
+
+
+                <div class="photo-section row">
+                    <span class="photo-groups col-12">Photo Groups</span>
+
+                    <!--  DAY 1-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 1</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <!--  DAY 2-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 2</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <!--  DAY 3-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 3</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <!--  DAY 4-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 4</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <!--  DAY 5-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 5</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <!--  DAY 6-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 6</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <!--  DAY 7-->
+                    <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <div class="photo-group-box">
+                            <span class="photo-group">Day 7</span>
+                        </div>
+                        <q-carousel
+                                animated
+                                height="100px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Eiffel Tower</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Monet's Pond and Estate</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                </div>
+                            </q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
+                                <div class="absolute-bottom custom-caption">
+                                    <div class="text-h6">Travel Power!</div>
+                                </div>
+                            </q-carousel-slide>
+                        </q-carousel>
+                    </div>
+
+                    <div class="add-photo-icon photo-col q-pa-md col-6 col-md-3 col-lg-2">
+                        <q-icon name="add_a_photo" size="75px" color="grey"></q-icon>
                     </div>
 
 
-                    <div class="row">
-                        <span class="photo-groups col-12">Photo Groups</span>
+                </div>
+            </q-tab-panel>
 
-                        <!--  DAY 1-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 1</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+            <!--                FAVORITES - TAB PANEL -->
 
-                        <!--  DAY 2-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 2</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+            <q-tab-panel :name="favorites">
+                <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                </div>
+            </q-tab-panel>
 
-                        <!--  DAY 3-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 3</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+            <!--                CREATE TRIP - TAB PANEL -->
+            <q-tab-panel :name="createnewtrip">
+                <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
 
-                        <!--  DAY 4-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 4</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+                    <q-input v-model="text" class="col-8" label="Trip Title" outlined>
+                        <template v-slot:append>
+                            <q-icon name="star_outline"></q-icon>
+                        </template>
+                    </q-input>
 
-                        <!--  DAY 5-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 5</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+                    <q-input v-model="text" class="col-2" label="Arrival Date" outlined>
+                        <template v-slot:append>
+                            <q-icon name="event"></q-icon>
+                        </template>
+                    </q-input>
 
-                        <!--  DAY 6-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 6</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+                    <q-input v-model="text" class="col-2" label="Departure Date" outlined>
+                        <template v-slot:append>
+                            <q-icon name="event"></q-icon>
+                        </template>
+                    </q-input>
 
-                        <!--  DAY 7-->
-                        <div class="q-pa-md col-2">
-                            <div class="photo-group-box">
-                                <span class="photo-group">Day 7</span>
-                            </div>
-                            <q-carousel
-                                    animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Monet's Pond and Estate</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
-                                    </div>
-                                </q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg">
-                                    <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Travel Power!</div>
-                                    </div>
-                                </q-carousel-slide>
-                            </q-carousel>
-                        </div>
+                    <q-input v-model="text" class="col-12" label="Trip Description" outlined>
+                    </q-input>
 
 
+                    <div class="q-pa-md col-3">
+                        <q-uploader
+                                label="Upload photo"
+                                multiple
+                                style="max-width: 300px; width: 100%"
+                                url="http://localhost:4444/upload"
+                        />
                     </div>
-                </q-tab-panel>
-                <!--                FAVORITES - TAB PANEL -->
-
-                <q-tab-panel :name="favorites">
-                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                    <div class="q-pa-md col-3">
+                        <q-uploader
+                                batch
+                                label="Batch upload"
+                                multiple
+                                style="max-width: 300px; width: 100%"
+                                url="http://localhost:4444/upload"
+                        ></q-uploader>
                     </div>
-                </q-tab-panel>
-                <!--                CREATE TRIP - TAB PANEL -->
-                <q-tab-panel :name="createnewtrip">
-                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
 
-                        <q-input v-model="text" class="col-8" label="Trip Title" outlined>
-                            <template v-slot:append>
-                                <q-icon name="star_outline"></q-icon>
-                            </template>
-                        </q-input>
-
-                        <q-input v-model="text" class="col-2" label="Arrival Date" outlined>
-                            <template v-slot:append>
-                                <q-icon name="event"></q-icon>
-                            </template>
-                        </q-input>
-
-                        <q-input v-model="text" class="col-2" label="Departure Date" outlined>
-                            <template v-slot:append>
-                                <q-icon name="event"></q-icon>
-                            </template>
-                        </q-input>
-
-                        <q-input v-model="text" class="col-12" label="Trip Description" outlined>
-                        </q-input>
-
-
-                        <div class="q-pa-md col-3">
-                            <q-uploader
-                                    label="Upload photo"
-                                    multiple
-                                    style="max-width: 300px; width: 100%"
-                                    url="http://localhost:4444/upload"
-                            />
-                        </div>
-                        <div class="q-pa-md col-3">
-                            <q-uploader
-                                    batch
-                                    label="Batch upload"
-                                    multiple
-                                    style="max-width: 300px; width: 100%"
-                                    url="http://localhost:4444/upload"
-                            ></q-uploader>
-                        </div>
-
-                        <div class="q-pa-md col-3">
-                            <q-carousel
-                                    v-model="slide"
-                                    animated
-                                    height="350px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
-                            >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg"></q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg"></q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg"></q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg"></q-carousel-slide>
-                            </q-carousel>
-                        </div>
-
+                    <div class="q-pa-md col-3">
+                        <q-carousel
+                                v-model="slide"
+                                animated
+                                height="350px"
+                                infinite
+                                swipeable
+                                thumbnails
+                                width="auto"
+                        >
+                            <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg"></q-carousel-slide>
+                            <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg"></q-carousel-slide>
+                            <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg"></q-carousel-slide>
+                            <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg"></q-carousel-slide>
+                        </q-carousel>
                     </div>
-                </q-tab-panel>
 
-                <!--                END OF TABS -->
-            </q-page>
+                </div>
+            </q-tab-panel>
+
+            <!--                END OF TABS -->
         </q-page-container>
 
 
@@ -470,6 +491,8 @@
 </script>
 <script type="importmap">
     { "imports": { "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js" } }
+
+
 
 
 
