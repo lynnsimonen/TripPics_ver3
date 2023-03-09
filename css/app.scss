@@ -41,9 +41,12 @@ q-tabs {
   font-weight: bolder;
 }
 
-.favorite-star {
-  color: grey;
-  display: flex;
-  justify-content: flex-start;
+.q-tab__icon {
+  color: yellow;
+}
 
+.q-field__native {
+  color: black;
+  display: flex;
+  justify-content: flex-end;
 }

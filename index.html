@@ -65,8 +65,7 @@
                     narrow-indicator
             >
                 <q-tab label="All Trips" name="all-trips"></q-tab>
-                <q-tab label="favorites" name="favorites">
-                    <q-icon color="yellow" name="star"></q-icon>
+                <q-tab class="star-tab" label="favorites" icon="star" name="favorites">
                 </q-tab>
                 <q-tab label="create trip" name="create-new-trip">
                 </q-tab>
@@ -78,8 +77,7 @@
                 <q-tab-panel name="create-trip">
                     <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
 
-                        <q-input v-model="text" class="col-8" label="Trip Title" outlined>
-                            <q-icon class="favorite-star" name="star-border"></q-icon>
+                        <q-input v-model="text" class="col-8" label="Trip Title" icon="star-border" outlined>
                         </q-input>
 
                         <q-input v-model="text" class="col-2" label="Arrival Date" outlined>
