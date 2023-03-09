@@ -3,7 +3,9 @@ const app = Vue.createApp({
     data: function (){
         return {
             slide:1,
-            tab:'alltrips',
+            currentTab:'alltrips',
+            //favorites
+            //createnewtrip
             newTrip: {
                 title: '',
                 arrivalDate: '',
