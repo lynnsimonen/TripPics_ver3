@@ -187,7 +187,26 @@
                         <!--  DAY 1-->
                         <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
                             <div class="photo-group-box">
-                                <span class="photo-group">Day 1
+                                <div class="photo-group ">Day 1
+
+                                    <q-btn
+                                            class="q-btn-edit"
+                                            dense
+                                            flat
+                                            icon="edit"
+                                            padding="0 0"
+                                            size="sm"
+                                    >
+                                    </q-btn>
+                                    <q-btn
+                                            class="q-btn-edit"
+                                            dense
+                                            flat
+                                            icon="delete_forever"
+                                            padding="0 0"
+                                            size="sm"
+                                    >
+                                    </q-btn>
                                     <q-btn
                                             class="q-btn-photo-qty"
                                             color="primary"
@@ -197,7 +216,7 @@
                                             size="xs"
                                     >
                                     </q-btn>
-                                </span>
+                                </div>
                             </div>
                             <q-carousel
                                     v-model="slide"
@@ -207,7 +226,7 @@
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
                                     <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
+                                        <div class="text-h6">Eiffel Tower  </div>
                                     </div>
                                 </q-carousel-slide>
                                 <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
@@ -285,7 +304,7 @@
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Nrmdy.jpg">
                                     <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
+                                        <div class="text-h6">Normandy Beach</div>
                                     </div>
                                 </q-carousel-slide>
                                 <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
@@ -465,8 +484,8 @@
                                 <div class="uploaders q-gutter-sm row items-start">
                                     <div class="one-upload uploader">
                                         <q-uploader
-                                                label="Upload photo"
                                                 color="grey"
+                                                label="Upload photo"
                                                 multiple
                                                 style="max-width: 200px"
                                                 url="http://localhost:4444/upload"
@@ -475,8 +494,8 @@
                                     <div class="batch-upload uploader">
                                         <q-uploader
                                                 batch
-                                                label="Batch upload"
                                                 color="grey"
+                                                label="Batch upload"
                                                 multiple
                                                 style="max-width: 200px"
                                                 url="http://localhost:4444/upload"
