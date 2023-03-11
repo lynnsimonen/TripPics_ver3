@@ -76,35 +76,101 @@
                 </q-tab>
             </q-tabs>
 
-            <!--        <pre>{{currentTab}}</pre>  ... It works!-->
+            <!-- <pre>{{currentTab}}</pre>  ... It works!-->
 
-<!--            <q-tab-panels v-model="currenTab">-->
+            <q-tab-panels v-model="currentTab">
 
                 <!--                ALL TRIPS - TAB PANEL -->
 
-                <q-tab-panel :name="alltrips">
+                <q-tab-panel name="alltrips">
                     <div class="trip-headers row q-col-gutter-x-xs q-col-gutter-y-lg">
-                    <span class="trip-title-hdr col-8"> Trip Title
-                     <q-icon class="sort" name="import_export"></q-icon>
-                    </span>
+                        <span class="trip-title-hdr col-7"> Trip Title
+                         <q-btn
+                                 class="q-btn-sort"
+                                 color="grey"
+                                 dense
+                                 flat
+                                 icon="import_export"
+                                 padding="0 0"
+                                 size="sm"
+                         >
+                         </q-btn>
+                        </span>
 
                         <span class="date-hdr col-2">Arrival
-                    <q-icon class="sort" name="import_export"></q-icon>
-                    </span>
+                         <q-btn
+                                 class="q-btn-sort"
+                                 color="grey"
+                                 dense
+                                 flat
+                                 icon="import_export"
+                                 padding="0 0"
+                                 size="sm"
+                         >
+                         </q-btn>
+                        </span>
 
                         <span class="date-hdr col-2">Departure
-                    <q-icon class="sort" name="import_export"></q-icon>
-                    </span>
+                            <q-btn
+                                    class="q-btn-sort"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="import_export"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                        </span>
+                        <div col-1></div>
                     </div>
                     <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
-                    <span class="trip-title col-8">
-                         <q-icon name="expand_more"></q-icon>
-                        <q-icon name="star_outline"></q-icon>
-                        Trip to somewhere great
-                        <q-icon name="edit"></q-icon>
-                    </span>
+                        <span class="trip-title col-7">
+                             <q-btn
+                                     class="q-btn-trip-title"
+                                     color="primary"
+                                     dense
+                                     flat
+                                     icon="expand_more"
+                                     padding="0 0"
+                                     size="sm"
+                             >
+                            </q-btn>
+                             <q-btn class="q-btn-trip-title"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="star_outline"
+                                    padding="0 0"
+                                    size="sm"
+                             >
+                            </q-btn>
+                            Trip to somewhere great
+                        </span>
                         <span class="date col-2"> 03/11/2018</span>
                         <span class="date col-2"> 03/21/2018</span>
+                        <div class="edit-delete-box" col-1>
+                            <q-btn
+                                    class="q-btn-edit"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="edit"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                            <q-btn
+                                    class="q-btn-edit"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="delete_forever"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                        </div>
                         <span class="captains-log col-2">Captain's Log</span>
                         <p class="log">We went all over the place and had such a great time! Want to do it again and go
                             here.
@@ -121,15 +187,23 @@
                         <!--  DAY 1-->
                         <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
                             <div class="photo-group-box">
-                                <span class="photo-group">Day 1</span>
+                                <span class="photo-group">Day 1
+                                    <q-btn
+                                            class="q-btn-photo-qty"
+                                            color="primary"
+                                            label="4"
+                                            push
+                                            round
+                                            size="xs"
+                                    >
+                                    </q-btn>
+                                </span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
                                     <div class="absolute-bottom custom-caption">
@@ -157,19 +231,27 @@
                         <!--  DAY 2-->
                         <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
                             <div class="photo-group-box">
-                                <span class="photo-group">Day 2</span>
+                                <span class="photo-group">Day 2
+                                 <q-btn
+                                         class="q-btn-photo-qty"
+                                         color="primary"
+                                         label="4"
+                                         push
+                                         round
+                                         size="xs"
+                                 >
+                                    </q-btn>
+                                </span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <q-carousel-slide :name="1" img-src="images/FR_Monet.jpg">
                                     <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
+                                        <div class="text-h6">Monet's Pond and Estate</div>
                                     </div>
                                 </q-carousel-slide>
                                 <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
@@ -196,16 +278,14 @@
                                 <span class="photo-group">Day 3</span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <q-carousel-slide :name="1" img-src="images/FR_Nrmdy.jpg">
                                     <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
+                                        <div class="text-h6">Normandy Beach: Battlemants and Rainbow</div>
                                     </div>
                                 </q-carousel-slide>
                                 <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
@@ -232,16 +312,14 @@
                                 <span class="photo-group">Day 4</span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
+                                <q-carousel-slide :name="1" img-src="images/travelGraphics.jpg">
                                     <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower</div>
+                                        <div class="text-h6">Travel Power!</div>
                                     </div>
                                 </q-carousel-slide>
                                 <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
@@ -268,12 +346,10 @@
                                 <span class="photo-group">Day 5</span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
                                     <div class="absolute-bottom custom-caption">
@@ -304,12 +380,10 @@
                                 <span class="photo-group">Day 6</span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
                                     <div class="absolute-bottom custom-caption">
@@ -340,12 +414,10 @@
                                 <span class="photo-group">Day 7</span>
                             </div>
                             <q-carousel
+                                    v-model="slide"
                                     animated
-                                    height="100px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                                    arrows
+                                    height="150px"
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
                                     <div class="absolute-bottom custom-caption">
@@ -370,88 +442,255 @@
                             </q-carousel>
                         </div>
 
+                        <!-- Add Photo Group Button w/ Drop-Down -->
                         <div class="add-photo-icon photo-col q-pa-md col-6 col-md-3 col-lg-2">
-                            <q-icon color="grey" name="add_a_photo" size="75px"></q-icon>
+                            <q-btn-dropdown
+                                    color="grey"
+                                    icon="add_a_photo"
+                                    label="Add Photo Group"
+                                    size="25px"
+                                    stack
+                            >
+                                <q-input
+                                        v-model="text"
+                                        class="add-photo-group"
+                                        color="grey"
+                                        label="Enter Photo Group Name"
+                                        name="new-photo-group-name"
+                                        outlined
+                                >
+                                </q-input>
+
+                                <!-- <div class="col-12 self-center">-->
+                                <div class="uploaders q-gutter-sm row items-start">
+                                    <div class="one-upload uploader">
+                                        <q-uploader
+                                                label="Upload photo"
+                                                color="grey"
+                                                multiple
+                                                style="max-width: 200px"
+                                                url="http://localhost:4444/upload"
+                                        ></q-uploader>
+                                    </div>
+                                    <div class="batch-upload uploader">
+                                        <q-uploader
+                                                batch
+                                                label="Batch upload"
+                                                color="grey"
+                                                multiple
+                                                style="max-width: 200px"
+                                                url="http://localhost:4444/upload"
+                                        ></q-uploader>
+                                    </div>
+                                </div>
+                            </q-btn-dropdown>
+
                         </div>
-
-
                     </div>
                 </q-tab-panel>
 
                 <!--                FAVORITES - TAB PANEL -->
 
-                <q-tab-panel :name="favorites">
-                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                <q-tab-panel name="favorites">
+                    <div class="trip-headers row q-col-gutter-x-xs q-col-gutter-y-lg">
+                        <span class="trip-title-hdr col-7"> Trip Title
+                         <q-icon class="sort" name="import_export"></q-icon>
+                        </span>
+
+                        <span class="date-hdr col-2">Arrival
+                        <q-icon class="sort" name="import_export"></q-icon>
+                        </span>
+
+                        <span class="date-hdr col-2">Departure
+                        <q-icon class="sort" name="import_export"></q-icon>
+                        </span>
+                        <div col-1></div>
                     </div>
+
+                    <!-- FAVORITE TRIPS START HERE -->
+
+                    <div class="row q-col-gutter-x-xs q-col-gutter-y-md">
+                        <span class="trip-title col-7">
+                             <q-icon name="navigate_next"></q-icon>
+                            <q-icon color="yellow" name="star"></q-icon>
+                            Trip to somewhere great
+                        </span>
+                        <span class="date col-2"> 03/11/2018</span>
+                        <span class="date col-2"> 03/21/2018</span>
+                        <div class="edit-delete-box col-1">
+                            <q-btn
+                                    class="q-btn-edit"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="edit"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                            <q-btn
+                                    class="q-btn-edit"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="delete_forever"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                        </div>
+                    </div>
+
+                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                        <span class="trip-title col-7">
+                             <q-icon name="navigate_next"></q-icon>
+                            <q-icon color="yellow" name="star"></q-icon>
+                            Another Great Trip
+                        </span>
+                        <span class="date col-2"> 03/11/2018</span>
+                        <span class="date col-2"> 03/21/2018</span>
+                        <div class="edit-delete-box col-1">
+                            <q-btn
+                                    class="q-btn-edit"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="edit"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                            <q-btn
+                                    class="q-btn-edit"
+                                    color="grey"
+                                    dense
+                                    flat
+                                    icon="delete_forever"
+                                    padding="0 0"
+                                    size="sm"
+                            >
+                            </q-btn>
+                        </div>
+                    </div>
+
+                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg fav-trip">
+                        <span class="trip-title col-7">
+                             <q-icon name="navigate_next"></q-icon>
+                            <q-icon color="yellow" name="star"></q-icon>
+                            An Island in The Middle of Nowhere
+                        </span>
+                        <span class="date col-2"> 03/11/2018</span>
+                        <span class="date col-2"> 03/21/2018</span>
+                        <div class="edit-delete-box col-1">
+                            <q-icon color="grey" name="edit" size="16px"></q-icon>
+                            <q-icon color="grey" name="delete_forever" size="16px"></q-icon>
+                        </div>
+                    </div>
+
                 </q-tab-panel>
 
                 <!--                CREATE TRIP - TAB PANEL -->
-                <q-tab-panel :name="createnewtrip">
-                    <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                <q-tab-panel name="createnewtrip">
 
-                        <q-input v-model="text" class="col-8" label="Trip Title" outlined>
-                            <template v-slot:append>
-                                <q-icon name="star_outline"></q-icon>
-                            </template>
-                        </q-input>
+                    <q-form
+                            action="http://localhost:8080"
+                            class="form-column q-pa-md shadow-2"
+                    >
+                        <div id="form-id" class="form-div row q-col-gutter-x-xs q-col-gutter-y-xs">
 
-                        <q-input v-model="text" class="col-2" label="Arrival Date" outlined>
-                            <template v-slot:append>
-                                <q-icon name="event"></q-icon>
-                            </template>
-                        </q-input>
+                            <!--  FORM INPUT -->
 
-                        <q-input v-model="text" class="col-2" label="Departure Date" outlined>
-                            <template v-slot:append>
-                                <q-icon name="event"></q-icon>
-                            </template>
-                        </q-input>
-
-                        <q-input v-model="text" class="col-12" label="Trip Description" outlined>
-                        </q-input>
-
-
-                        <div class="q-pa-md col-3">
-                            <q-uploader
-                                    label="Upload photo"
-                                    multiple
-                                    style="max-width: 300px; width: 100%"
-                                    url="http://localhost:4444/upload"
-                            />
-                        </div>
-                        <div class="q-pa-md col-3">
-                            <q-uploader
-                                    batch
-                                    label="Batch upload"
-                                    multiple
-                                    style="max-width: 300px; width: 100%"
-                                    url="http://localhost:4444/upload"
-                            ></q-uploader>
-                        </div>
-
-                        <div class="q-pa-md col-3">
-                            <q-carousel
-                                    v-model="slide"
-                                    animated
-                                    height="350px"
-                                    infinite
-                                    swipeable
-                                    thumbnails
-                                    width="auto"
+                            <q-input
+                                    v-model="text"
+                                    class="col-8"
+                                    label="Trip Title"
+                                    name="form-trip-title"
+                                    outlined
                             >
-                                <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg"></q-carousel-slide>
-                                <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg"></q-carousel-slide>
-                                <q-carousel-slide :name="3" img-src="images/FR_Nrmdy.jpg"></q-carousel-slide>
-                                <q-carousel-slide :name="4" img-src="images/travelGraphics.jpg"></q-carousel-slide>
-                            </q-carousel>
-                        </div>
+                                <template v-slot:append>
+                                    <q-icon name="star_outline"></q-icon>
+                                </template>
+                            </q-input>
 
-                    </div>
+                            <q-input
+                                    v-model="text"
+                                    class="form-arrival-date col-2"
+                                    label="Arrival Date"
+                                    name="arrival-date"
+                                    outlined
+                            >
+                                <template v-slot:append>
+                                    <q-icon name="event"></q-icon>
+                                </template>
+                            </q-input>
+
+                            <q-input
+                                    v-model="text"
+                                    class="col-2"
+                                    label="Departure Date"
+                                    name="departure-date"
+                                    outlined
+                            >
+                                <template v-slot:append>
+                                    <q-icon name="event"></q-icon>
+                                </template>
+                            </q-input>
+
+                            <q-input
+                                    v-model="text"
+                                    class="col-12"
+                                    label="Trip Description"
+                                    name="trip-descrip"
+                                    outlined
+                                    type="textarea"
+                            >
+                            </q-input>
+
+                            <div class="btn-submit-div-wrap col-12 self-center q-py-xl">
+                                <q-btn label="submit new trip" type="submit"></q-btn>
+                            </div>
+
+                            <!--                            <q-btn-->
+                            <!--                                    class="col-12 self-center"-->
+                            <!--                                    flat-->
+                            <!--                            >-->
+                            <!--                                <q-icon-->
+                            <!--                                        color="grey"-->
+                            <!--                                        name="add_circle"-->
+                            <!--                                        size="100px"-->
+                            <!--                                >-->
+                            <!--                                </q-icon>-->
+                            <!--                                <div class="text-center" size="30px">Add Photo Group-->
+                            <!--                                </div>-->
+                            <!--                            </q-btn>-->
+
+                            <!--                            <div class="col-12 self-center">-->
+                            <!--                                <div class="one-upload uploader">-->
+                            <!--                                    <q-uploader-->
+                            <!--                                            label="Upload photo"-->
+                            <!--                                            multiple-->
+                            <!--                                            url="http://localhost:4444/upload"-->
+                            <!--                                    ></q-uploader>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="batch-upload uploader">-->
+                            <!--                                    <q-uploader-->
+                            <!--                                            batch-->
+                            <!--                                            label="Batch upload"-->
+                            <!--                                            multiple-->
+                            <!--                                            url="http://localhost:4444/upload"-->
+                            <!--                                    ></q-uploader>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+
+
+                            <!-- END OF FORM -->
+                        </div>
+                    </q-form>
                 </q-tab-panel>
 
-                <!--                END OF TABS -->
+                <!-- END OF TABS -->
 
-<!--            </q-tab-panels>-->
+            </q-tab-panels>
         </q-page-container>
 
 

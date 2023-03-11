@@ -28,18 +28,6 @@
   font-size: 80px;
 }
 
-q-input {
-  color: #3e92cc;
-}
-
-q-icon {
-  color: #3e92cc;
-}
-
-.q-field__label {
-  color: #3e92cc;
-}
-
 q-tabs {
   font-weight: bolder;
 }
@@ -50,12 +38,6 @@ q-tabs {
 
 .q-tab__label {
   text-align: left;
-}
-
-.q-field__native {
-  color: black;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .photo-groups {
@@ -96,29 +78,113 @@ q-tabs {
   padding: 0;
 }
 
-.trip-title, .date {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 16px;
-  padding-top: 0;
-  margin-top: 20px;
-}
-
 .captains-log, .log, .photo-section {
   margin-left: 40px;
   margin-right: 10px;
 }
 
-.photo-group, q-carousel, .photo-col {
+.trip-title, .date {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding-top: 0;
+  margin-top: 20px;
+}
+
+.edit-delete-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.photo-group, q-carousel {
   margin: 0;
   padding: 0;
+}
+
+.block {
+  font-size: 12px;
 }
 
 .add-photo-icon {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
+  padding: 25px;
+}
+
+.q-carousel {
+  padding: 5px;
+  height: 250px;
+}
+
+.text-h6 {
+  padding: 5px;
+  font-weight: bolder;
+  color: white;
+  font-size: 10px;
+}
+
+.absolute-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.uploaders {
+  margin: 50px 50px 50px 25px;
+}
+
+.add-photo-group {
+  margin: 50px 50px 25px 50px;
+}
+
+q-input {
+  color: #3e92cc;
+}
+
+q-icon {
+  color: #3e92cc;
+}
+
+.q-field__label {
+  color: #3e92cc;
+}
+
+.add-group-all-trips {
+  color: grey;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.fav-trip {
+  display: flex;
+  align-items: self-start;
+}
+
+.q-field__native {
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#form-id * {
+  font-size: 14px;
+  color: grey;
+  line-height: 16px;
+  margin: 0;
+}
+
+q-field__native {
+  margin: 0;
+  padding: 10px;
+}
+
+.btn-submit-div-wrap, q-toolbar__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
 }
 
 /*# sourceMappingURL=app.css.map */
