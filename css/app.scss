@@ -44,6 +44,12 @@ q-tabs {
 }
 
 // ALL TRIPS TAB...
+.main-title{
+  font-size: 24px;
+  color: royalblue;
+  font-weight: bolder;
+}
+
 .photo-groups{
   text-align: center;
   margin-bottom: 0;
@@ -68,12 +74,24 @@ q-tabs {
 
 .trip-title-hdr{
   font-size: 22px;
-  margin-bottom: 15px;
 }
 
 .date-hdr{
   font-size: 16px;
+}
+.trip-title-hdr, .date-hdr{
   margin-bottom: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: royalblue;
+  color: white;
+}
+
+.trip-title, .date{
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 20px;
+  color: grey;
 }
 
 .captains-log, .photo-groups, .log{
@@ -87,13 +105,6 @@ q-tabs {
   margin-right: 10px;
 }
 
-.trip-title, .date{
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 12px;
-  padding-top: 0;
-  margin-top: 20px;
-}
 .edit-delete-box {
   display: flex;
   justify-content: flex-start;
