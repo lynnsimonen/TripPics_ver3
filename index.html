@@ -84,8 +84,8 @@
 
                 <q-tab-panel name="alltrips">
                     <div class="trip-headers row q-col-gutter-x-xs q-col-gutter-y-lg">
-                        <span class="main-title col-12">TRIP MEMORIES!</span>
-                        <span class="trip-title-hdr col-7"> Trip Title
+                        <span class="main-title col-12 q-px-md" style="color: #02a0e7">TRIP MEMORIES!</span>
+                        <span class="trip-title-hdr col-7 q-px-md"> Trip Title
                          <q-btn
                                  class="q-btn-sort"
                                  dense
@@ -97,7 +97,7 @@
                          </q-btn>
                         </span>
 
-                        <span class="date-hdr col-2">Arrival
+                        <span class="date-hdr col-2 ">Arrival
                          <q-btn
                                  class="q-btn-sort"
                                  dense
@@ -109,7 +109,7 @@
                          </q-btn>
                         </span>
 
-                        <span class="date-hdr col-2">Departure
+                        <span class="date-hdr col-2 ">Departure
                             <q-btn
                                     class="q-btn-sort"
                                     dense
@@ -120,10 +120,11 @@
                             >
                             </q-btn>
                         </span>
-                        <div col-1></div>
+                        <span class="end-blank-hdr col-1 "></span>
                     </div>
+
                     <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
-                        <span class="trip-title col-7">
+                        <span class="trip-title col-7 q-px-md">
                              <q-btn
                                      class="q-btn-trip-title"
                                      color="primary"
@@ -147,7 +148,7 @@
                         </span>
                         <span class="date col-2"> 03/11/2018</span>
                         <span class="date col-2"> 03/21/2018</span>
-                        <div class="edit-delete-box col-1">
+                        <span class="edit-delete-box col-1">
                             <q-btn
                                     class="q-btn-edit"
                                     color="grey"
@@ -168,18 +169,16 @@
                                     size="sm"
                             >
                             </q-btn>
-                        </div>
-                        <span class="captains-log col-11">Captain's Log</span>
-                        <p class="log col-11">We went all over the place and had such a great time! Want to do it again and go
+                        </span>
+                        <span class="captains-log col-11 ">Captain's Log</span>
+                        <p class="log col-11">We went all over the place and had such a great time! Want to do it again
+                            and go
                             here.
                             We went all over the place and had such a great time! Want to do it again and go here.
                             We went all over the place and had such a great time! Want to do it again and go here.
                             We went all over the place and had such a great time! Want to do it again and go here.
                             We went all over the place and had such a great time! Want to do it again and go here.</p>
-                    </div>
 
-
-                    <div class="photo-section row">
                         <span class="photo-groups col-12">Photo Groups</span>
 
                         <!--  DAY 1-->
@@ -224,7 +223,7 @@
                             >
                                 <q-carousel-slide :name="1" img-src="images/FR_Eiffel.jpg">
                                     <div class="absolute-bottom custom-caption">
-                                        <div class="text-h6">Eiffel Tower  </div>
+                                        <div class="text-h6">Eiffel Tower</div>
                                     </div>
                                 </q-carousel-slide>
                                 <q-carousel-slide :name="2" img-src="images/FR_Monet.jpg">
@@ -521,7 +520,7 @@
                         <span class="date-hdr col-2">Departure
                         <q-icon class="sort" name="import_export"></q-icon>
                         </span>
-                        <div col-1></div>
+                        <span class="end-blank-hdr col-1"></span>
                     </div>
 
                     <!-- FAVORITE TRIPS START HERE -->
@@ -713,8 +712,8 @@
 
         <!--FOOTER-->
         <q-footer elevated>
-            <q-toolbar>
-                <q-toolbar-title>Footer</q-toolbar-title>
+            <q-toolbar class="footer-end">
+                <q-toolbar-title class="footer-title">©️2023 Copyright: SimonenWebBeginnings. All Rights Reserved | Privacy Policy</q-toolbar-title>
             </q-toolbar>
         </q-footer>
     </q-layout>
@@ -733,7 +732,7 @@
 <script src="js/app.js"></script>
 <script src="js/app-quasar.js"></script>
 <script src="js/components/tripList-component.js"></script>
-<script src="js/components/tripTrip-component.js"></script>
+<script src="js/components/tripListItem-component.js"></script>
 
 <script>
     app.use(Quasar)
