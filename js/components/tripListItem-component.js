@@ -27,6 +27,9 @@ app.component('TripListItem', {
     computed: {},
     //String "template" of HTML. ONLY one root HTML element.Can reference any data, props, mmethods... using {{ name }}
     template: `
+      
+      
+      //li
       <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
       <span class="trip-title col-7 q-px-md">
                              <q-btn

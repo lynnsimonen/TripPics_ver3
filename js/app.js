@@ -4,6 +4,7 @@ const app = Vue.createApp({
         return {
             slide:1,
             currentTab:'alltrips',
+            model:{from: '01/08/2023', to: '01/17/2023' } ,
             //favorites
             //createnewtrip
             newTrip: {

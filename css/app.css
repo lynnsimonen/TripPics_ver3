@@ -12,6 +12,7 @@
 .q-tab-panel {
   padding-right: 0;
   padding-left: 0;
+  padding-top: 0;
 }
 
 .toolbar-travelpics {
@@ -37,7 +38,7 @@ q-tabs {
   font-weight: bolder;
 }
 
-.q-tab__icon {
+.star-yellow .q-tab__icon, .star-yellow .q-icon {
   color: yellow;
 }
 
@@ -68,29 +69,24 @@ q-tabs {
   justify-content: center;
 }
 
-.trip-title-hdr, .date-hdr, .captains-log, .photo-groups {
-  color: grey;
-  font-weight: bold;
-}
-
-.trip-title-hdr {
-  font-size: 22px;
-}
-
-.date-hdr {
-  font-size: 16px;
-}
-
-.trip-title-hdr, .date-hdr, .end-blank-hdr {
-  margin-bottom: 15px;
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.travel-dates-hdr, .trip-title-hdr, .edit-delete-hdr,
+.q-btn-star-hdr, .q-btn-sort-hdr .block {
   color: white;
-  background-color: #02a0e7;
+  font-weight: bold;
+  margin-right: 0;
+  padding-right: 0;
+  font-size: 14px;
 }
 
-.trip-title, .date {
+.q-item__section--side {
+  align-items: flex-start;
+}
+
+.captains-log, .photo-groups {
+  text-decoration: underline;
+}
+
+.trip-title {
   font-weight: bold;
   font-size: 18px;
   padding-top: 20px;
@@ -99,8 +95,8 @@ q-tabs {
 
 .captains-log, .photo-groups, .log {
   font-size: 14px;
-  margin-left: 5px;
-  padding: 0;
+  margin-left: 100px;
+  padding: 10px;
 }
 
 .captains-log, .log, .photo-groups {
@@ -202,6 +198,11 @@ q-field__native {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.q-date__header-title, .q-date__header-subtitle {
+  color: white;
+  font-weight: bolder;
 }
 
 .footer-end {
