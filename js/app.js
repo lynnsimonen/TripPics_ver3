@@ -5,12 +5,12 @@ const app = Vue.createApp({
             slide:1,
             currentTab:'alltrips',
             model:{from: '01/08/2023', to: '01/17/2023' } ,
-            //favorites
             //createnewtrip
             newTrip: {
                 title: '',
                 tripDescription: '',
-                dates:[{from:'', to:''}],
+                dates:{from:'', to:''},
+                favorite: false,
                 photoGroupArray: [
                     {
                         Title: '',
@@ -25,8 +25,9 @@ const app = Vue.createApp({
             },
             tripList: [
                 {title: 'France Family Trip - 2018',
-                    tripDescription: 'First intnl trip for boys - Spring Break 2018.',
-                    dates:[{from: '01/08/2023', to: '01/17/2023' }],
+                    tripDescription: 'First international trip for boys - Spring Break 2018.',
+                    dates:{from: '03/27/2018', to: '04/05/2018' },
+                    favorite: true,
                     photoGroupArray: [
                         {Title: 'Day Un',photosArray: [{photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}]},
                         {Title: 'Day Deux',photosArray: [{photo:'FR_Monet.jpg', photoCaption:'Monet Country Home and Pond'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
@@ -34,7 +35,8 @@ const app = Vue.createApp({
                     ]},
                 {title: 'Costa Rica Family Trip - 2019',
                     tripDescription:'Spring Break 2019' ,
-                    dates:[{from: '01/08/2023', to: '01/17/2023' }],
+                    dates:{from: '03/24/2019', to: '04/02/2019' },
+                    favorite: false,
                     photoGroupArray: [
                         {Title: 'Day Uno',photosArray: [{photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
                         {Title: 'Day Dos',photosArray: [{photo:'FR_Monet.jpg', photoCaption:'Monet Country Home and Pond'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
@@ -42,7 +44,8 @@ const app = Vue.createApp({
                     ]},
                 {title: 'Maui Family Trip - 2021',
                     tripDescription: 'Shake off 2020 COVID Trip 2021.',
-                    dates:[{from: '01/08/2023', to: '01/17/2023' }],
+                    dates:{from: '07/09/2021', to: '07/19/2021' },
+                    favorite: true,
                     photoGroupArray: [
                         {Title: 'Day 1',photosArray: [{photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
                         {Title: 'Day 2',photosArray: [{photo:'FR_Monet.jpg', photoCaption:'Monet Country Home and Pond'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
@@ -50,38 +53,19 @@ const app = Vue.createApp({
                     ]},
             ]
         }
+    },
+    props: {},
+    //Usually "events" triggered by v-on:
+    methods: {},
+    //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
+    computed: {
+        favoriteList: function(){
+            //returns a filtered list
+            return this.tripList.filter(function(trip){
+                //return true if we want to keep the trip in the rtnd list
+                return trip.favorite == true;
+            })
+        }
     }
 })
 
-
-
-//
-// const app = Vue.createApp({
-//     data(){
-//         return {
-//             timers: [
-//                 new Timer('Oktoberfest', '2022-09-24 00:00', true),
-//                 new Timer('Halloween', '2022-10-31 00:00'),
-//                 new Timer('Labor Day', '2022-09-05 00:00'),
-//                 new Timer('Fall Break', '2022-10-10 00:00'),
-//                 new Timer('Ted Mosby\'s Birthday', '2023-04-25 00:00', true),
-//                 new Timer('Graduation', '2023-05-20 10:00'),
-//             ],
-//             rightDrawerOpen: false,
-//         }
-//     },
-//
-//     methods: {
-//         toggleRightDrawer() {
-//             this.rightDrawerOpen = !this.rightDrawerOpen;
-//         },
-//
-//         addTimer(timer){
-//             this.timers.push(timer);
-//         },
-//
-//         openNewTimerForm(){
-//             this.toggleRightDrawer();
-//         }
-//     }
-// })

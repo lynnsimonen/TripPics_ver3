@@ -76,8 +76,8 @@ app.component('TripList', {
               </q-item-section>
             </template>
           </q-expansion-item>
-         <trip-list-trip v-for="trip in trips"></trip-list-trip>
+         <trip-list-trip v-for="trip in trips" :trip="trip"></trip-list-trip>
           </q-list>
-          <div>Total trips: {{items.length}}</div>
+          <div>Total trips: {{trips.length}}</div>
         `,
 });

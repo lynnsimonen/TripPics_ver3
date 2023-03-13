@@ -6,7 +6,9 @@ app.component('TripListTrip', {
     //Created and maintained by this component. This function is like a constructor.
     //Called separately for each instance of this component
     data: function () {
-        return {}
+        return {
+            uid: 'trip-' + Math.floor(Math.random()*10e16), //generate large random number
+        }
     },
     //Data passed into component via attibutes. Optional.
     //Objects and arrays are pass-by-reference.
@@ -30,20 +32,25 @@ app.component('TripListTrip', {
       >
       <template v-slot:header>
         <q-item-section side>
-          <q-btn class="q-btn-trip-title star-yellow"
-                 color="grey"
-                 dense
-                 flat
-                 icon="star"
-                 padding="0 0"
-                 size="md"
+          <!-- put a star here if the favorite input star is checked -->
+          <q-checkbox
+              v-model="trip.favorite"
+              checked-icon="star"
+              class="q-btn-trip-title star-yellow"
+              dense
+              flat
+              indeterminate-icon="help"
+              padding="0 0"
+              size="md"
+              unchecked-icon="none"
           >
-          </q-btn>
+          </q-checkbox>
         </q-item-section>
         <q-item-section>
-          {{ title }}
+          {{ trip.title }}
         </q-item-section>
-        <q-item-section v-for="item in items" :item="item">
+        <q-item-section>
+          {{ trip.dates.from }} - {{ trip.dates.to }}
         </q-item-section>
         <q-item-section side>
           <div class="row items-center">
@@ -76,8 +83,27 @@ app.component('TripListTrip', {
       <q-card>
         <q-card-section>
           <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
-            <span class="captains-log col-11 ">Captain's Log</span>
-            <p class="log col-11">{{ item.tripDescription }}</p>
+            <span class="captains-log col-11 ">
+              Captain's Log
+              <q-checkbox
+                  v-model="trip.favorite"
+                  checked-icon="star"
+                  class="q-btn-trip-title star-yellow"
+                  dense
+                  flat
+                  indeterminate-icon="help"
+                  padding="0 0"
+                  size="md"
+                  unchecked-icon="star_border"
+              >
+              </q-checkbox>              
+            </span>            
+            <p class="log col-11">
+              {{ trip.tripDescription }}
+            <span class="q-px-sm">
+              Is this a favorite trip?: <strong>{{ trip.favorite }}</strong>
+            </span>
+            </p>
 
 
             <span class="photo-groups col-12">Photo Groups</span>
