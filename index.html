@@ -84,7 +84,7 @@
 
                 <q-tab-panel name="alltrips">
                     <!-- bind this tripList-Component prop "trips" to a variable "tripList" from app.js-->
-                    <trip-list v-bind:trips="tripList"></trip-list>
+                    <trip-list v-bind:trips="tripList" @remove-trip="deleteTrip"></trip-list>
                 </q-tab-panel>
 
                 <!--                FAVORITES - TAB PANEL -->
@@ -98,7 +98,7 @@
                 <q-tab-panel name="createnewtrip">
 
                     <q-form
-                            action="http://localhost:8080"
+                            @submit.prevent="addTrip"
                             class="form-column q-pa-md shadow-2"
                     >
                         <div id="form-id" class="form-div row q-col-gutter-x-xs q-col-gutter-y-xs">
@@ -106,7 +106,7 @@
                             <div class="q-pr-xs col-3">
 
                                 <q-date
-                                        v-model="model"
+                                        v-model="newTrip.dates"
                                         name="dates"
                                         today-btn
                                         minimal
@@ -118,7 +118,7 @@
                                         color="grey"
                                         align="Center"
                                         range
-                                />
+                               ></q-date>
                             </div>
                             <div class="col-9">
                                 <q-field
@@ -127,11 +127,11 @@
                                         class="col-12"
                                 >
                                     <template v-slot:control>
-                                        <div class="self-center full-width no-outline" tabindex="0">Dates of Travel: {{ model.from }} - {{model.to}}</div>
+                                        <div class="self-center full-width no-outline" tabindex="0">Dates of Travel: {{ newTrip.dates.from }} - {{newTrip.dates.to}}</div>
                                     </template>
                                 </q-field>
                                 <q-input
-                                        v-model="text"
+                                        v-model="newTrip.title"
                                         class="q-mt-xl col-12 shadow-1"
                                         label="Trip Title"
                                         name="form-trip-title"
@@ -139,7 +139,7 @@
                                 >
                                 </q-input>
                                 <q-input
-                                        v-model="text"
+                                        v-model="newTrip.tripDescription"
                                         class="col-12 shadow-1"
                                         label="Trip Description"
                                         name="trip-descrip"
@@ -149,12 +149,10 @@
                                 </q-input>
                                 <div class="btn-submit-div-wrap col-12 self-center q-py-xl">
                                     <q-btn
-                                            outline
                                             class="submit-new-trip"
                                             label="Submit New Trip"
                                             type="submit"
-                                            color="white"
-                                            text-color="black"
+                                            color="light-grey"
                                     >
                                     </q-btn>
                                 </div>

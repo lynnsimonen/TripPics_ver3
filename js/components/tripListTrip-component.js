@@ -15,13 +15,13 @@ app.component('TripListTrip', {
     //Primitives (number, string, boolean) are pass-by-value.
     props: {
         trip: Object,
-        // title: String,
-        // tripDescription: String,
-        // dates: Array,
-        // photoGroupArray: Array,
     },
     //Usually "events" triggered by v-on:
-    methods: {},
+    methods: {
+        deleteIt(){
+            this.$emit('remove-trip', this.trip);
+        }
+    },
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
     computed: {},
     //String "template" of HTML. ONLY one root HTML element.Can reference any data, props, mmethods... using {{ name }}
@@ -54,27 +54,8 @@ app.component('TripListTrip', {
         </q-item-section>
         <q-item-section side>
           <div class="row items-center">
-                                    <span class="edit-delete-box col-1">
-                                        <q-btn
-                                            class="q-btn-edit"
-                                            color="grey"
-                                            dense
-                                            flat
-                                            icon="edit"
-                                            padding="10px 10px"
-                                            size="sm"
-                                        >
-                                        </q-btn>
-                                        <q-btn
-                                            class="q-btn-edit"
-                                            color="grey"
-                                            dense
-                                            flat
-                                            icon="delete_forever"
-                                            padding="10px 10px"
-                                            size="sm"
-                                        >
-                                        </q-btn>
+                                    <span >
+                                      Expand trip to edit/delete.
                                     </span>
           </div>
         </q-item-section>
@@ -84,7 +65,7 @@ app.component('TripListTrip', {
         <q-card-section>
           <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
             <span class="captains-log col-11 ">
-              Captain's Log
+              Memories and Notes of Trip
               <q-checkbox
                   v-model="trip.favorite"
                   checked-icon="star"
@@ -97,13 +78,35 @@ app.component('TripListTrip', {
                   unchecked-icon="star_border"
               >
               </q-checkbox>              
-            </span>            
-            <p class="log col-11">
-              {{ trip.tripDescription }}
-            <span class="q-px-sm">
-              Is this a favorite trip?: <strong>{{ trip.favorite }}</strong>
             </span>
+           
+            <p class="log col-11">
+              {{ trip.tripDescription }}      
             </p>
+            <hr coll-11>
+            <span class="edit-delete-box col-12 q-mx-xl">
+                                        <q-btn
+                                            class="q-btn-edit"
+                                            color="grey"
+                                            dense
+                                            flat
+                                            icon="edit"
+                                            padding="10px 10px"
+                                            size="md"
+                                        >
+                                        </q-btn>
+                                        <q-btn
+                                            @click="deleteIt"
+                                            class="q-btn-edit"
+                                            color="red"
+                                            dense
+                                            flat
+                                            icon="delete_forever"
+                                            padding="10px 10px"
+                                            size="md"
+                                        >
+                                        </q-btn>
+                                    </span>
 
 
             <span class="photo-groups col-12">Photo Groups</span>

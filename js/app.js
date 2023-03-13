@@ -56,7 +56,20 @@ const app = Vue.createApp({
     },
     props: {},
     //Usually "events" triggered by v-on:
-    methods: {},
+    methods: {
+        addTrip(){
+            this.tripList.push(this.newTrip);
+            //clear the form
+            this.newTrip = {
+                    title: '',
+                    tripDescription: '',
+                    dates:{from:'', to:''},
+            }
+        },
+        deleteTrip(trip){
+            this.tripList.splice(this.tripList.indexOf(trip),1);
+        },
+    },
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
     computed: {
         favoriteList: function(){

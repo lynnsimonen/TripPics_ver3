@@ -17,7 +17,9 @@ app.component('TripList', {
     },
     //Usually "events" triggered by v-on:
     methods: {
-
+        deleteIt(trip){
+            this.$emit('remove-trip', trip);
+        }
     },
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
     computed: {
@@ -34,16 +36,7 @@ app.component('TripList', {
                             switch-toggle-side
           >
             <template v-slot:header>
-              <q-item-section side>
-                <q-btn class="q-btn-star-hdr"
-                       dense
-                       flat
-                       icon="star_outline"
-                       padding="0 0"
-                       size="md"
-                >
-                </q-btn>
-              </q-item-section>
+              
               <q-item-section class="sort-hdr-item" side>
                 <q-btn
                     class="q-btn-sort-hdr"
@@ -76,7 +69,13 @@ app.component('TripList', {
               </q-item-section>
             </template>
           </q-expansion-item>
-         <trip-list-trip v-for="trip in trips" :trip="trip"></trip-list-trip>
+         <trip-list-trip 
+             v-for="trip in trips" 
+             :trip="trip" 
+             :key="trip.title"
+             @remove-trip="deleteIt"
+         >           
+         </trip-list-trip>
           </q-list>
           <div>Total trips: {{trips.length}}</div>
         `,

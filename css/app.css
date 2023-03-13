@@ -46,12 +46,6 @@ q-tabs {
   text-align: left;
 }
 
-.main-title {
-  font-size: 24px;
-  color: royalblue;
-  font-weight: bolder;
-}
-
 .photo-groups {
   text-align: center;
   margin-bottom: 0;
@@ -82,7 +76,7 @@ q-tabs {
   align-items: flex-start;
 }
 
-.captains-log, .photo-groups {
+.photo-groups {
   text-decoration: underline;
 }
 
@@ -93,20 +87,26 @@ q-tabs {
   color: grey;
 }
 
-.captains-log, .photo-groups, .log {
-  font-size: 14px;
+.captains-log {
   margin-left: 100px;
-  padding: 10px;
+  font-size: 16px;
 }
 
-.captains-log, .log, .photo-groups {
-  margin-left: 40px;
+.photo-groups, .log {
+  font-size: 14px;
+  margin-left: 100px;
+  padding-left: 10px;
+}
+
+.log {
+  border: black 1px solid;
 }
 
 .edit-delete-box {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-start;
+  padding-right: 50px;
 }
 
 .photo-group, q-carousel {
@@ -189,7 +189,7 @@ q-icon {
   margin: 0;
 }
 
-q-field__native {
+.q-field__native {
   margin: 0;
   padding: 10px;
 }
@@ -198,6 +198,11 @@ q-field__native {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.q-btn .submit-new-trip {
+  background-color: #02a0e7;
+  color: white;
 }
 
 .q-date__header-title, .q-date__header-subtitle {
