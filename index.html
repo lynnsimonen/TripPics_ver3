@@ -109,13 +109,12 @@
                                         v-model="newTrip.dates"
                                         name="dates"
                                         today-btn
-                                        minimal
                                         mask="MM/DD/YYYY"
                                         class="trip-calendar"
                                         text-color="white"
-                                        subtitle="DATES OF TRAVEL"
-                                        title="start and end dates"
-                                        color="grey"
+                                        subtitle="TRIP CALENDAR"
+                                        title="Click on Trip Start and End Dates"
+                                        color="white"
                                         align="Center"
                                         range
                                ></q-date>
@@ -127,7 +126,7 @@
                                         class="col-12"
                                 >
                                     <template v-slot:control>
-                                        <div class="self-center full-width no-outline" tabindex="0">Dates of Travel: {{ newTrip.dates.from }} - {{newTrip.dates.to}}</div>
+                                        <div class="self-center full-width no-outline" tabindex="0">Dates of Travel (choose on calendar): {{ newTrip.dates.from }} - {{newTrip.dates.to}}</div>
                                     </template>
                                 </q-field>
                                 <q-input
