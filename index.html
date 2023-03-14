@@ -84,7 +84,9 @@
 
                 <q-tab-panel name="alltrips">
                     <!-- bind this tripList-Component prop "trips" to a variable "tripList" from app.js-->
-                    <trip-list v-bind:trips="tripList" @remove-trip="deleteTrip"></trip-list>
+                    <trip-list v-bind:trips="tripList" @remove-trip="deleteTrip">
+
+                    </trip-list>
                 </q-tab-panel>
 
                 <!--                FAVORITES - TAB PANEL -->
@@ -192,15 +194,18 @@
 <script src="js/app-quasar.js"></script>
 <script src="js/components/tripList-component.js"></script>
 <script src="js/components/tripListTrip-component.js"></script>
+<script src="js/components/photoGroupList-component.js"></script>
+<script src="js/components/photoGroup-component.js"></script>
+<script src="js/components/photoList-component.js"></script>
+<script src="js/components/photoListPhoto-component.js"></script>
+
 
 <script>
     app.use(Quasar)
     app.mount('#app')
 </script>
 
-<script async src="https://ga.jspm.io/npm:es-module-shims@1.4.6/dist/es-module-shims.js">
-
-</script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.4.6/dist/es-module-shims.js"></script>
 
 
 </body>

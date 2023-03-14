@@ -5,26 +5,24 @@
 app.component('TripList', {
     //Created and maintained by this component. This function is like a constructor.
     //Called separately for each instance of this component
-    data: function(){
-        return{}
+    data: function () {
+        return {}
     },
     //Data passed into component via attibutes. Optional.
     //Objects and arrays are pass-by-reference.
     //Primitieves (number, string, boolean) are pass-by-value.
     props: {
-       trips: Array,   //HTML <photo-group-array="">
+        trips: Array,   //HTML <photo-group-array="">
 
     },
     //Usually "events" triggered by v-on:
     methods: {
-        deleteIt(trip){
+        deleteIt(trip) {
             this.$emit('remove-trip', trip);
         }
     },
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
-    computed: {
-
-    },
+    computed: {},
     //String "template" of HTML. ONLY one root HTML element.Can reference any data, props, mmethods... using {{ name }}
     template:
         `
@@ -36,7 +34,7 @@ app.component('TripList', {
                             switch-toggle-side
           >
             <template v-slot:header>
-              
+
               <q-item-section class="sort-hdr-item" side>
                 <q-btn
                     class="q-btn-sort-hdr"
@@ -69,14 +67,16 @@ app.component('TripList', {
               </q-item-section>
             </template>
           </q-expansion-item>
-         <trip-list-trip 
-             v-for="trip in trips" 
-             :trip="trip" 
-             :key="trip.title"
-             @remove-trip="deleteIt"
-         >           
-         </trip-list-trip>
+
+          <!--  List out each trip from tripList in app.js-->
+          <trip-list-trip
+              v-for="trip in trips"
+              :trip="trip"
+              :key="trip.title"
+              @remove-trip="deleteIt"
+          ></trip-list-trip>
+
           </q-list>
-          <div>Total trips: {{trips.length}}</div>
+          <div>Total trips: {{ trips.length }}</div>
         `,
 });
