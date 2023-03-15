@@ -30,7 +30,7 @@ app.component('TripListTrip', {
                         expand-separator
                         switch-toggle-side
       >
-      <template v-slot:header>
+      <template v-slot:header class="trip-template-expansion-hdr">
         <q-item-section side>
           <!-- put a star here if the favorite input star is checked -->
           <q-checkbox
@@ -54,7 +54,7 @@ app.component('TripListTrip', {
         </q-item-section>
         <q-item-section side>
           <div class="row items-center">
-                                    <span >
+                                    <span>
                                       (Length of trip) days
                                     </span>
           </div>
@@ -64,8 +64,8 @@ app.component('TripListTrip', {
       <q-card>
         <q-card-section>
           <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
-            <span class="captains-log col-11 ">
-              Memories and Notes of Trip
+            <span class="captains-log col-12">
+              Memories and Trip Notes
               <q-checkbox
                   v-model="trip.favorite"
                   checked-icon="star"
@@ -79,44 +79,41 @@ app.component('TripListTrip', {
               >
               </q-checkbox>              
             </span>
-           
-            <p class="log col-11">
-              {{ trip.tripDescription }}      
+
+            <p class="log col-12 q-pt-none">
+              {{ trip.tripDescription }}
             </p>
-            <hr coll-11>
             <span class="edit-delete-box col-12 q-mx-xl">
-                                        <q-btn
-                                            class="q-btn-edit"
-                                            color="grey"
-                                            dense
-                                            flat
-                                            icon="edit"
-                                            padding="10px 10px"
-                                            size="md"
-                                        >
-                                        </q-btn>
-                                        <q-btn
-                                            @click="deleteIt"
-                                            class="q-btn-edit"
-                                            color="red"
-                                            dense
-                                            flat
-                                            icon="delete_forever"
-                                            padding="10px 10px"
-                                            size="md"
-                                        >
-                                        </q-btn>
-                                    </span>
-
-
-            <span class="photo-groups col-12">Photo Groups</span>
+                <q-btn
+                    class="q-btn-edit"
+                    color="grey"
+                    dense
+                    flat
+                    icon="edit"
+                    padding="10px 10px"
+                    size="md"
+                >
+                </q-btn>
+                <q-btn
+                    class="q-btn-edit"
+                    color="red"
+                    dense
+                    flat
+                    icon="delete_forever"
+                    padding="10px 10px"
+                    size="md"
+                    @click="deleteIt"
+                >
+                </q-btn>
+            </span>
+            <span class="photo-groups col-11">Photo Groups</span>
           </div>
         </q-card-section>
-        
+
         <!-- bind here -->
-           <photo-group-list
-           v-bind:photoGroups="trip.photoGroupArray"
-           ></photo-group-list>
+        <photo-group-list
+            v-bind:photoGroups="trip.photoGroupArray"
+        ></photo-group-list>
 
       </q-card>
       </q-expansion-item>

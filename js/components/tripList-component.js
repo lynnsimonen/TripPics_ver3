@@ -30,15 +30,14 @@ app.component('TripList', {
           <q-expansion-item class="header-bar"
                             expand-icon-class="text-primary"
                             expand-separator
-                            header-class="bg-primary text-white"
+                            header-class="trips-hdr-class"
                             switch-toggle-side
           >
             <template v-slot:header>
 
-              <q-item-section class="sort-hdr-item" side>
+              <q-item-section class="sort-hdr-title" side>
                 <q-btn
                     class="q-btn-sort-hdr"
-                    color="white"
                     dense
                     flat
                     icon="import_export"
@@ -48,9 +47,10 @@ app.component('TripList', {
                 >
                 </q-btn>
               </q-item-section>
-              <q-item-section class="sort-hdr-item-section">
+              <q-item-section class="sort-hdr-date">
                 <q-btn
                     class="q-btn-sort-hdr"
+                    align="right"
                     dense
                     flat
                     icon="import_export"
@@ -60,10 +60,18 @@ app.component('TripList', {
                 >
                 </q-btn>
               </q-item-section>
-              <q-item-section side>
-                <div class="row items-center edit-delete-hdr" style="font-weight: bold">
-                  LENGTH OF TRIP
-                </div>
+              <q-item-section class="sort-hdr-trip-length">
+                <q-btn
+                    class="q-btn-sort-hdr"
+                    align="right"
+                    dense
+                    flat
+                    icon="import_export"
+                    label="LENGTH OF TRIP"
+                    padding="0 0"
+                    size="sm"
+                >
+                </q-btn>
               </q-item-section>
             </template>
           </q-expansion-item>

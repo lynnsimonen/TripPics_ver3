@@ -36,9 +36,8 @@ app.component('PhotoGroup', {
               </q-btn>
               <q-btn
                   class="q-btn-photo-qty"
-                  color="primary"
                   label="4"
-                  push
+                  flat
                   round
                   size="xs"
               >

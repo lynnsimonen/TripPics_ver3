@@ -25,7 +25,9 @@ const app = Vue.createApp({
             },
             tripList: [
                 {title: 'France Family Trip - 2018',
-                    tripDescription: 'First international trip for boys - Spring Break 2018.',
+                    tripDescription: 'First international trip for boys - Spring Break 2018.Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!' +
+                        'Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!' +
+                        'Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour!  Bonjour! Bonjour! Bonjour! Bonjour! Bonjour! Bonjour! Bonjour! Bonjour!',
                     dates:{from: '03/27/2018', to: '04/05/2018' },
                     favorite: true,
                     photoGroupArray: [

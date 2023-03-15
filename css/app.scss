@@ -37,7 +37,7 @@
   font-size: 80px;
 }
 // TAB SETUP...
-q-tabs {
+.q-tabs {
   font-weight: bolder;
 }
 
@@ -52,39 +52,20 @@ q-tabs {
 
 // ALL TRIPS TAB...
 
-
-.photo-groups{
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.photo-group{
-  margin-bottom: 0;
-  margin-top: 0;
-  text-align: center;
-}
-
-.photo-group-box{
-  display: flex;
-  justify-content: center;
-}
-
-.travel-dates-hdr, .trip-title-hdr, .edit-delete-hdr,
-.q-btn-star-hdr, .q-btn-sort-hdr .block{
-  color: white;
+//trip header bar labels
+.block{
   font-weight: bold;
   margin-right: 0;
-  padding-right: 0;
+  padding-right: 30px;
   font-size: 14px;
+}
+
+.sort-hdr-title{
+  padding-left: 15px;
 }
 
 .q-item__section--side{
   align-items: flex-start;
-}
-
-.photo-groups{
-  text-decoration: underline;
 }
 
 .trip-title{
@@ -94,29 +75,64 @@ q-tabs {
   color: grey;
 }
 
-.captains-log{
-  margin-left:100px;
-  font-size: 16px;
+.q-expansion-item__container{
+  background-color: rgba(2, 160, 231, 0.1);;
 }
 
-.photo-groups, .log{
-  font-size: 14px;
-  margin-left: 100px;
-  padding-left: 10px;
+//MEMORIES AND TRIP NOTES SECTION:
+.captains-log, .photo-groups{
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
+  top-margin: 0;
+  top-padding: 0;
+}
+
+.q-expansion-item__content{
+  padding-left:100px;
+  padding-right:100px;
+  padding-bottom:25px;
 }
 
 .log{
-  border: black 1px solid;
+  border: darkgrey 1px solid;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .edit-delete-box {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding-right: 50px;
+  padding-right: 60px;
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 //ALL TRIPS TAB: Photo Groups Text
-.photo-group, q-carousel{
+.header-bar{
+  background-color: rgba(2, 160, 231, 0.2);
+}
+
+.photo-group{
+ text-align: center;
+}
+
+.q-btn__content .block{
+color: #02a0e7;
+}
+
+.photo-group-box{
+  display: flex;
+  justify-content: center;
+}
+
+.photo-group, .q-carousel{
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -125,10 +141,6 @@ q-tabs {
 
 
 //ALL TRIPS TAB: qty of photos in photo group
-.block {
-  font-size:12px;
-}
-
 .add-photo-icon {
   display: flex;
   justify-content: center;
@@ -163,11 +175,11 @@ margin:50px 50px 50px 25px;
   margin: 50px 50px 25px 50px;
 }
 
-q-input{
+.q-input{
   color: #3e92cc;
 }
 
-q-icon, {
+.q-icon, {
   color: #3e92cc;
 }
 
@@ -216,8 +228,8 @@ q-icon, {
   align-items: center;
 }
 
-.q-btn .submit-new-trip{
-  background-color: #02a0e7;
+.submit-new-trip{
+  background-color: darkgrey;
   color: white;
 }
 
