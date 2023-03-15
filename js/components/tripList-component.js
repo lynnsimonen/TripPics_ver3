@@ -62,7 +62,7 @@ app.component('TripList', {
               </q-item-section>
               <q-item-section side>
                 <div class="row items-center edit-delete-hdr" style="font-weight: bold">
-                  EDIT/DELETE
+                  LENGTH OF TRIP
                 </div>
               </q-item-section>
             </template>

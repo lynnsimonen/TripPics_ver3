@@ -12,8 +12,7 @@ app.component('PhotoList', {
     computed: {},
 
     template:
-        `
-          YEAH, PHOTOLIST IS BINDING! {{photos.length}}
+        `          
           <q-carousel
               v-model="slide"
               animated

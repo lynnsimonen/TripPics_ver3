@@ -11,8 +11,7 @@ app.component('PhotoListPhoto', {
     computed: {},
 
     template:
-        `
-          I NEED PHOTOLISTPHOTOS!!!
+        `         
           <q-carousel-slide 
                 :name="name" 
                 :img-src="'images/' + photo.photo"

@@ -55,7 +55,7 @@ app.component('TripListTrip', {
         <q-item-section side>
           <div class="row items-center">
                                     <span >
-                                      Expand trip to edit/delete.
+                                      (Length of trip) days
                                     </span>
           </div>
         </q-item-section>

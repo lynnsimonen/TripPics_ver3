@@ -10,7 +10,7 @@ app.component('PhotoGroup', {
     computed: {},
 
     template:
-        `
+        `         
          <div class="photo-col q-pa-md col-6 col-md-3 col-lg-2">
           
           <div class="photo-group-box">
