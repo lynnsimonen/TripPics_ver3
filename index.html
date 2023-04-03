@@ -32,25 +32,15 @@
     <q-layout class="shadow-2 rounded-borders">
 
         <!--        HEADER-->
-        <q-header elevated>,
+        <q-header elevated class="q-mb-md">,
             <q-toolbar>
-                <div class="menu-box">
-                    <q-btn class="q-mr-sm" dense flat round>
-                        <q-icon name="menu" size="3rem"></q-icon>
-                    </q-btn>
-                </div>
                 <q-toolbar-title class="q-mx-lg q-mb-md toolbar-travelpics">
-                    <q-avatar size="150px">
+                    <q-avatar size="50px">
                         <img src="images/smilingWorld250px.jpg">
                     </q-avatar>
                     TripPics
                 </q-toolbar-title>
 
-                <div class="account-box">
-                    <q-btn class="account-avatar-btn q-mr-sm " dense flat round>
-                        <q-icon name="account_circle" size="3rem"></q-icon>
-                    </q-btn>
-                </div>
 
             </q-toolbar>
         </q-header>
@@ -58,113 +48,124 @@
         <!--            MAIN BODY-->
 
         <q-page-container>
+            <div class="row">
+                <div class="col-12 col-10 q-px-lg">
 
-            <!-- TABS -->
-            <q-tabs
-                    v-model="currentTab"
-                    active-color="lightgoldenrodyellow"
-                    class="bg-primary text-white shadow-2 star-yellow"
-                    dense
-                    inline-label
-                    narrow-indicator
-            >
-                <q-tab label="All Trips" name="alltrips">
-                </q-tab>
-                <q-tab icon="star" label="Favorites" name="favorites">
-                </q-tab>
-                <q-tab label="Add A Trip" name="createnewtrip">
-                </q-tab>
-            </q-tabs>
-
-            <!-- <pre>{{currentTab}}</pre>  ... It works!-->
-
-            <q-tab-panels v-model="currentTab">
-
-                <!--                ALL TRIPS - TAB PANEL -->
-
-                <q-tab-panel name="alltrips">
-                    <!-- bind this tripList-Component prop "trips" to a variable "tripList" from app.js-->
-                    <trip-list v-bind:trips="tripList" @remove-trip="deleteTrip">
-
-                    </trip-list>
-                </q-tab-panel>
-
-                <!--                FAVORITES - TAB PANEL -->
-
-                <q-tab-panel name="favorites">
-                    <!-- bind this favoriteList-Component prop "trips" to a variable "favoriteList" from app.js-->
-                    <trip-list v-bind:trips="favoriteList"></trip-list>
-                </q-tab-panel>
-
-                <!--                CREATE TRIP - TAB PANEL -->
-                <q-tab-panel name="createnewtrip">
-
-                    <q-form
-                            @submit.prevent="addTrip"
-                            class="form-column q-pa-md shadow-2"
+                    <!-- TABS -->
+                    <q-tabs
+                            v-model="currentTab"
+                            active-color="lightgoldenrodyellow"
+                            class="star-yellow q-mb-sm"
+                            dense
+                            inline-label
+                            narrow-indicator
+                            align="left"
                     >
-                        <div id="form-id" class="form-div row q-col-gutter-x-xs q-col-gutter-y-xs">
-                            <!--  FORM INPUT -->
-                            <div class="q-pr-xs col-3">
+                        <q-tab label="All Trips" name="alltrips">
+                        </q-tab>
+                        <q-tab icon="star" label="Favorites" name="favorites">
+                        </q-tab>
+                        <q-tab label="Add A Trip" name="createnewtrip">
+                        </q-tab>
+                    </q-tabs>
 
-                                <q-date
-                                        v-model="newTrip.dates"
-                                        name="dates"
-                                        today-btn
-                                        mask="MM/DD/YYYY"
-                                        class="trip-calendar"
-                                        text-color="white"
-                                        subtitle="TRIP CALENDAR"
-                                        title="Click on Trip Start and End Dates"
-                                        color="white"
-                                        align="Center"
-                                        range
-                               ></q-date>
-                            </div>
-                            <div class="col-9">
-                                <q-field
-                                        outlined
-                                        :dense="dense"
-                                        class="col-12"
-                                >
-                                    <template v-slot:control>
-                                        <div class="self-center full-width no-outline" tabindex="0">Dates of Travel (choose on calendar): {{ newTrip.dates.from }} - {{newTrip.dates.to}}</div>
-                                    </template>
-                                </q-field>
-                                <q-input
-                                        v-model="newTrip.title"
-                                        class="q-mt-xl col-12 shadow-1"
-                                        label="Trip Title"
-                                        name="form-trip-title"
-                                        outlined
-                                >
-                                </q-input>
-                                <q-input
-                                        v-model="newTrip.tripDescription"
-                                        class="col-12 shadow-1"
-                                        label="Trip Description"
-                                        name="trip-descrip"
-                                        outlined
-                                        type="textarea"
-                                >
-                                </q-input>
-                                <div class="btn-submit-div-wrap col-12 self-center q-py-xl">
-                                    <q-btn
-                                            class="submit-new-trip"
-                                            label="Submit New Trip"
-                                            type="submit"
-                                            color="light-grey"
-                                    >
-                                    </q-btn>
+                    <!-- <pre>{{currentTab}}</pre>  ... It works!-->
+
+                    <q-tab-panels v-model="currentTab">
+
+                        <!--                ALL TRIPS - TAB PANEL -->
+
+                        <q-tab-panel name="alltrips">
+                            <!-- bind this tripList-Component prop "trips" to a variable "tripList" from app.js-->
+                            <trip-list v-bind:trips="tripList" @remove-trip="deleteTrip">
+
+                            </trip-list>
+                        </q-tab-panel>
+
+                        <!--                FAVORITES - TAB PANEL -->
+
+                        <q-tab-panel name="favorites">
+                            <!-- bind this favoriteList-Component prop "trips" to a variable "favoriteList" from app.js-->
+                            <trip-list v-bind:trips="favoriteList"></trip-list>
+                        </q-tab-panel>
+
+                        <!--                CREATE TRIP - TAB PANEL -->
+                        <q-tab-panel name="createnewtrip">
+
+                            <q-form
+                                    @submit.prevent="addTrip"
+                                    class="form-column q-pa-md shadow-2"
+                            >
+                                <div id="form-id" class="form-div row q-col-gutter-x-xs q-col-gutter-y-xs">
+                                    <!--  FORM INPUT -->
+                                    <div class="q-pr-xs col-md-5 col-12">
+
+                                        <!--  CALENDAR -->
+                                        <q-date
+                                                v-model="newTrip.dates"
+                                                name="dates"
+                                                today-btn
+                                                mask="MM/DD/YYYY"
+                                                class="trip-calendar"
+                                                text-color="white"
+                                                subtitle="TRIP CALENDAR"
+                                                title="Click on Trip Start and End Dates"
+                                                color="white"
+                                                align="Left"
+                                                range
+                                        ></q-date>
+                                    </div>
+                                    <div class=" info-gather col-md-7 col-12">
+                                        <div class="info-boxes">
+                                            <q-field
+                                                    outlined
+                                                    :dense="dense"
+                                                    class="col-12"
+                                            >
+                                                <template v-slot:control>
+                                                    <div class="self-center full-width no-outline" tabindex="0">Dates of
+                                                        Travel (choose on calendar): {{ newTrip.dates.from }} -
+                                                        {{newTrip.dates.to}}
+                                                    </div>
+                                                </template>
+                                            </q-field>
+                                            <q-input
+                                                    v-model="newTrip.title"
+                                                    class="q-mt-xl col-12 shadow-1"
+                                                    label="Trip Title"
+                                                    name="form-trip-title"
+                                                    outlined
+                                            >
+                                            </q-input>
+                                            <q-input
+                                                    v-model="newTrip.tripDescription"
+                                                    class="col-12 shadow-1"
+                                                    label="Trip Description"
+                                                    name="trip-descrip"
+                                                    outlined
+                                                    type="textarea"
+                                            >
+                                            </q-input>
+                                            <div class="btn-submit-div-wrap col-12 q-py-xl">
+                                                <q-btn
+                                                        class="submit-new-trip"
+                                                        label="Submit New Trip"
+                                                        type="submit"
+                                                        color="light-grey"
+                                                >
+                                                </q-btn>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </q-form>
-                </q-tab-panel>
+                            </q-form>
+                        </q-tab-panel>
 
-                <!-- END OF TABS -->
+                        <!-- END OF TABS -->
 
-            </q-tab-panels>
+                    </q-tab-panels>
+                </div>
+            </div>
         </q-page-container>
 
 
@@ -198,6 +199,7 @@
 <script src="js/components/photoGroup-component.js"></script>
 <script src="js/components/photoList-component.js"></script>
 <script src="js/components/photoListPhoto-component.js"></script>
+<script src="js/components/sort-form.js"></script>
 
 
 <script>

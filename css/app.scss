@@ -1,9 +1,23 @@
+:root{
+  --blue:red;
+}
+
+$primary-color: #2C8C37ff;
+$secondary-color: #4E6163ff;
+
 //HEADER...
 .q-header {
-  background-image: linear-gradient(to left, #02a0e7, #fff);
+  background-image: linear-gradient(to left, $primary-color, #fff);
   //text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  color: #02a0e7;
-  font-weight: bolder;
+  color: $primary-color;
+}
+
+.q-tabs {
+  color: $primary-color;
+}
+
+.q-toolbar, h1, h2, h3, h4, h5, h6, .q-tabs {
+  font-family: "Paytone One", "Arial Black", sans-serif;
 }
 
 .q-toolbar {
@@ -18,24 +32,11 @@
 }
 
 .toolbar-travelpics {
-  color: #02a0e7;
+  color: $primary-color;
   //text-shadow: -1px -1px 0 #0c638c, 1px -1px 0 #0c638c, -1px 1px 0 #0c638c, 1px 1px 0 #0c638c;
-  font-size: 48px;
-  font-family: "Bookman Old Style";
-  font-style: italic;
-  font-weight: bolder;
+  font-size: 30px;
 }
 
-.account-avatar-btn {
-  color: #fff;
-  display: flex;
-  justify-content: flex-end;
-  vertical-align: top;
-}
-
-.account-avatar{
-  font-size: 80px;
-}
 // TAB SETUP...
 .q-tabs {
   font-weight: bolder;
@@ -51,6 +52,28 @@
 }
 
 // ALL TRIPS TAB...
+
+.sort-form {
+  background-color: $primary-color;
+  border-radius: 25px;
+}
+
+.q-field__control-container{
+  .q-field__native {
+    span {
+      color: white;
+    }
+  }
+  .q-field__label{
+    color: white;
+  }
+}
+.q-field__append{
+  .q-icon{
+    color: white;
+  }
+}
+
 
 //trip header bar labels
 .block{
@@ -72,12 +95,8 @@
   font-weight: bold;
   font-size: 18px;
   padding-top: 20px;
-  color: grey;
 }
 
-.q-expansion-item__container{
-  background-color: rgba(2, 160, 231, 0.1);;
-}
 
 //MEMORIES AND TRIP NOTES SECTION:
 .captains-log, .photo-groups{
@@ -95,7 +114,7 @@
 }
 
 .log{
-  border: darkgrey 1px solid;
+  border: $secondary-color 1px solid;
   font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
@@ -116,7 +135,8 @@
 }
 //ALL TRIPS TAB: Photo Groups Text
 .header-bar{
-  background-color: rgba(2, 160, 231, 0.2);
+  background-color: $primary-color;
+  color: white;
 }
 
 .photo-group{
@@ -124,7 +144,7 @@
 }
 
 .q-btn__content .block{
-color: #02a0e7;
+color: $primary-color;
 }
 
 .photo-group-box{
@@ -136,7 +156,7 @@ color: #02a0e7;
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: grey;
+  color: $secondary-color;
 }
 
 
@@ -176,21 +196,21 @@ margin:50px 50px 50px 25px;
 }
 
 .q-input{
-  color: #3e92cc;
+  color: $primary-color;
 }
 
 .q-icon, {
-  color: #3e92cc;
+  color: $primary-color;
 }
 
 //ALL TRIPS: Trip Description labels
 .q-field__label {
-  color:#3e92cc;
+  color:$primary-color;
 }
 
 //ALL TRIPS: camera icon color
 .add-group-all-trips{
-  color: grey;
+  color: $secondary-color;
   padding: 0;
   margin-left: 15px;
 }
@@ -204,16 +224,16 @@ margin:50px 50px 50px 25px;
 }
 
 .q-field__native {
-  color: black;
+  color: $primary-color;
   display: flex;
   justify-content: flex-end;
 }
 
 //ADD A TRIP TAB
 #form-id * {
-  font-size: 14px;
-  color: grey;
-  line-height: 16px;
+  font-size: 10px;
+  color: $secondary-color;
+  line-height: 10px;
   margin: 0;
 }
 
@@ -229,21 +249,25 @@ margin:50px 50px 50px 25px;
 }
 
 .submit-new-trip{
-  background-color: darkgrey;
+  background-color: lightgray;
   color: white;
 }
 
 .q-date__header-title, .q-date__header-subtitle{
-  color: white;
+  color: $secondary-color;
   font-weight: bolder;
 }
 
+info-gather{
+  align-content: flex-end;
+}
 
 //FOOTER
 .footer-end{
   display: flex;
   align-items: center;
   text-align: center;
+  background-color: $primary-color;
 }
 
 .footer-title{

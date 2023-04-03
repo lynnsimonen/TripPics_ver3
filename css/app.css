@@ -1,7 +1,18 @@
+:root {
+  --blue:red;
+}
+
 .q-header {
-  background-image: linear-gradient(to left, #02a0e7, #fff);
-  color: #02a0e7;
-  font-weight: bolder;
+  background-image: linear-gradient(to left, #2c8c37, #fff);
+  color: #2c8c37;
+}
+
+.q-tabs {
+  color: #2c8c37;
+}
+
+.q-toolbar, h1, h2, h3, h4, h5, h6, .q-tabs {
+  font-family: "Paytone One", "Arial Black", sans-serif;
 }
 
 .q-toolbar {
@@ -16,22 +27,8 @@
 }
 
 .toolbar-travelpics {
-  color: #02a0e7;
-  font-size: 48px;
-  font-family: "Bookman Old Style";
-  font-style: italic;
-  font-weight: bolder;
-}
-
-.account-avatar-btn {
-  color: #fff;
-  display: flex;
-  justify-content: flex-end;
-  vertical-align: top;
-}
-
-.account-avatar {
-  font-size: 80px;
+  color: #2c8c37;
+  font-size: 30px;
 }
 
 .q-tabs {
@@ -44,6 +41,22 @@
 
 .q-tab__label {
   text-align: left;
+}
+
+.sort-form {
+  background-color: #2c8c37;
+  border-radius: 25px;
+}
+
+.q-field__control-container .q-field__native span {
+  color: white;
+}
+.q-field__control-container .q-field__label {
+  color: white;
+}
+
+.q-field__append .q-icon {
+  color: white;
 }
 
 .block {
@@ -65,11 +78,6 @@
   font-weight: bold;
   font-size: 18px;
   padding-top: 20px;
-  color: grey;
-}
-
-.q-expansion-item__container {
-  background-color: rgba(2, 160, 231, 0.1);
 }
 
 .captains-log, .photo-groups {
@@ -87,7 +95,7 @@
 }
 
 .log {
-  border: darkgrey 1px solid;
+  border: #4e6163 1px solid;
   font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
@@ -108,7 +116,8 @@
 }
 
 .header-bar {
-  background-color: rgba(2, 160, 231, 0.2);
+  background-color: #2c8c37;
+  color: white;
 }
 
 .photo-group {
@@ -116,7 +125,7 @@
 }
 
 .q-btn__content .block {
-  color: #02a0e7;
+  color: #2c8c37;
 }
 
 .photo-group-box {
@@ -128,7 +137,7 @@
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: grey;
+  color: #4e6163;
 }
 
 .add-photo-icon {
@@ -165,19 +174,19 @@
 }
 
 .q-input {
-  color: #3e92cc;
+  color: #2c8c37;
 }
 
 .q-icon {
-  color: #3e92cc;
+  color: #2c8c37;
 }
 
 .q-field__label {
-  color: #3e92cc;
+  color: #2c8c37;
 }
 
 .add-group-all-trips {
-  color: grey;
+  color: #4e6163;
   padding: 0;
   margin-left: 15px;
 }
@@ -188,15 +197,15 @@
 }
 
 .q-field__native {
-  color: black;
+  color: #2c8c37;
   display: flex;
   justify-content: flex-end;
 }
 
 #form-id * {
-  font-size: 14px;
-  color: grey;
-  line-height: 16px;
+  font-size: 10px;
+  color: #4e6163;
+  line-height: 10px;
   margin: 0;
 }
 
@@ -212,19 +221,24 @@
 }
 
 .submit-new-trip {
-  background-color: darkgrey;
+  background-color: lightgray;
   color: white;
 }
 
 .q-date__header-title, .q-date__header-subtitle {
-  color: white;
+  color: #4e6163;
   font-weight: bolder;
+}
+
+info-gather {
+  align-content: flex-end;
 }
 
 .footer-end {
   display: flex;
   align-items: center;
   text-align: center;
+  background-color: #2c8c37;
 }
 
 .footer-title {

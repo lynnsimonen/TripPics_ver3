@@ -19,6 +19,31 @@ app.component('TripList', {
     methods: {
         deleteIt(trip) {
             this.$emit('remove-trip', trip);
+        },
+        sort(property) {
+            console.log('sorting by', property);
+
+            if (property === 'title') {
+                this.trips.sort((a, b) => {
+                    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+                        return -1
+                    } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            } else if (property === 'year') {
+                let a = (new Date(this.trip.dates.to)).getFullYear();
+                let b = (new Date(this.trip.dates.from)).getFullYear();
+                this.trips.sort((a, b) => {
+                    if ((a.year) < (b.year)) {
+                        return -1;
+                    } else if ((a.year) > (b.year)) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            }
         }
     },
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
@@ -26,65 +51,24 @@ app.component('TripList', {
     //String "template" of HTML. ONLY one root HTML element.Can reference any data, props, mmethods... using {{ name }}
     template:
         `
-          <q-list bordered class="rounded-borders">
-          <q-expansion-item class="header-bar"
-                            expand-icon-class="text-primary"
-                            expand-separator
-                            header-class="trips-hdr-class"
-                            switch-toggle-side
-          >
-            <template v-slot:header>
-
-              <q-item-section class="sort-hdr-title" side>
-                <q-btn
-                    class="q-btn-sort-hdr"
-                    dense
-                    flat
-                    icon="import_export"
-                    label="TRIP TITLE"
-                    padding="0 0"
-                    size="sm"
-                >
-                </q-btn>
-              </q-item-section>
-              <q-item-section class="sort-hdr-date">
-                <q-btn
-                    class="q-btn-sort-hdr"
-                    align="right"
-                    dense
-                    flat
-                    icon="import_export"
-                    label="TRIP DATES"
-                    padding="0 0"
-                    size="sm"
-                >
-                </q-btn>
-              </q-item-section>
-              <q-item-section class="sort-hdr-trip-length">
-                <q-btn
-                    class="q-btn-sort-hdr"
-                    align="right"
-                    dense
-                    flat
-                    icon="import_export"
-                    label="LENGTH OF TRIP"
-                    padding="0 0"
-                    size="sm"
-                >
-                </q-btn>
-              </q-item-section>
-            </template>
-          </q-expansion-item>
-
-          <!--  List out each trip from tripList in app.js-->
-          <trip-list-trip
-              v-for="trip in trips"
-              :trip="trip"
-              :key="trip.title"
-              @remove-trip="deleteIt"
-          ></trip-list-trip>
-
-          </q-list>
-          <div>Total trips: {{ trips.length }}</div>
+        <div>
+            <div class="row justify-between">
+                <div class="col-3 col-sm-2">
+                    <sort-form 
+                    :sort-function="sort"
+                    ></sort-form>
+                </div>
+            </div>
+              <q-list bordered class="rounded-borders">    
+                  <!--  List out each trip from tripList in app.js-->
+                  <trip-list-trip
+                      v-for="trip in trips"
+                      :trip="trip"
+                      :key="trip.title"
+                      @remove-trip="deleteIt"
+                  ></trip-list-trip>        
+              </q-list>
+              <div>Total trips: {{ trips.length }}</div>
+        </div>
         `,
 });

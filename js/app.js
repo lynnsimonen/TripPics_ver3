@@ -5,6 +5,7 @@ const app = Vue.createApp({
             slide:0,
             currentTab:'alltrips',
             model:{from: '01/08/2023', to: '01/17/2023' } ,
+
             //createnewtrip
             newTrip: {
                 title: '',
@@ -80,7 +81,7 @@ const app = Vue.createApp({
         favoriteList: function(){
             //returns a filtered list
             return this.tripList.filter(function(trip){
-                //return true if we want to keep the trip in the rtnd list
+                //return true if we want to keep the trip in the returned list
                 return trip.favorite == true;
             })
         }
