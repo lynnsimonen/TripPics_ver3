@@ -1,5 +1,10 @@
 const app = Vue.createApp({
     //data: all the data for the app, must return an object
+    vue:{
+        config: {
+            devtools: true,
+        }
+    },
     data: function (){
         return {
             slide:0,
@@ -10,7 +15,10 @@ const app = Vue.createApp({
             newTrip: {
                 title: '',
                 tripDescription: '',
-                dates:{from:'', to:''},
+                dates:{
+                    from:'',
+                    to:''
+                },
                 favorite: false,
                 photoGroupArray: [
                     {

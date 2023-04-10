@@ -8,9 +8,9 @@ app.component('TripList', {
     data: function () {
         return {}
     },
-    //Data passed into component via attibutes. Optional.
+    //Data passed into component via attributes. Optional.
     //Objects and arrays are pass-by-reference.
-    //Primitieves (number, string, boolean) are pass-by-value.
+    //Primitives (number, string, boolean) are pass-by-value.
     props: {
         trips: Array,   //HTML <photo-group-array="">
 
@@ -32,20 +32,14 @@ app.component('TripList', {
                     }
                     return 0;
                 })
-            } else if (property === 'year') {
-                let a = (new Date(this.trip.dates.to)).getFullYear();
-                let b = (new Date(this.trip.dates.from)).getFullYear();
+            } else if (property === 'dates.from') {
                 this.trips.sort((a, b) => {
-                    if ((a.year) < (b.year)) {
-                        return -1;
-                    } else if ((a.year) > (b.year)) {
-                        return 1;
-                    }
-                    return 0;
+                    return a.dates.from - b.dates.from;
                 })
             }
         }
     },
+
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
     computed: {},
     //String "template" of HTML. ONLY one root HTML element.Can reference any data, props, mmethods... using {{ name }}
