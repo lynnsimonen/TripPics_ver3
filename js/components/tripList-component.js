@@ -58,7 +58,7 @@ app.component('TripList', {
                   <trip-list-trip
                       v-for="trip in trips"
                       :trip="trip"
-                      :key="trip.title"
+                      :key="trip.key"
                       @remove-trip="deleteIt"
                   ></trip-list-trip>        
               </q-list>

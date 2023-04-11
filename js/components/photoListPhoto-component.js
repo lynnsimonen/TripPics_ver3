@@ -17,7 +17,7 @@ app.component('PhotoListPhoto', {
                 :img-src="'images/' + photo.photo"
           >
           <div class="absolute-bottom custom-caption">
-            <div class="text-h6">{{ photo.photoCaption }}</div>
+            <div class="text-h6" >{{ photo.photoCaption }}</div>
           </div>
           </q-carousel-slide>
         `,
