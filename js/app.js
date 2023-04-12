@@ -63,9 +63,9 @@ const app = Vue.createApp({
                     key: 'b',
                     favorite: false,
                     photoGroupArray: [
-                        {title: 'Day Uno',photosArray: [{photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
-                        {title: 'Day Dos',photosArray: [{photo:'FR_Monet.jpg', photoCaption:'Monet Country Home and Pond'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]},
-                        {title: 'Day Tres',photosArray: [{photo:'FR_Eiffel.jpg', photoCaption:'Tower'}, {photo:'', photoCaption:''}, {photo:'', photoCaption:''}]}
+                        {title: 'Day Uno',photosArray: [{photo:'CR_01.jpg', photoCaption:'Dinner at Punta Islita'}, {photo:'CR_02.jpg', photoCaption:'Baby Monkey in tree'}, {photo:'CR_03.jpg', photoCaption:'Monkey viewing tour'}]},
+                        {title: 'Day Dos',photosArray: [{photo:'CR_04.jpg', photoCaption:'Playa La Islita'}, {photo:'CR_05.jpg', photoCaption:''}, {photo:'CR_06.jpg', photoCaption:'Jungle'}]},
+                        {title: 'Day Tres',photosArray: [{photo:'CR_07.jpg', photoCaption:'Say No to Horseback Riding'}, {photo:'CR_08.jpg', photoCaption:'Little Red Tree Frog'}, {photo:'CR_09.jpg', photoCaption:''}]}
                     ]},
                 {title: 'Maui Family Trip - 2021',
                     tripDescription: 'Shake off 2020 COVID Trip 2021.  Maui, known also as “The Valley Isle,” is the second' +
