@@ -55,8 +55,8 @@ const app = Vue.createApp({
                     ]},
                 {title: 'Costa Rica Family Trip - 2019',
                     tripDescription:'Spring Break 2019 - Within the lush and vibrant green of this region lie many discoveries. ' +
-                        'The flash of scarlet macaw wings amid treetops. The scintillating iridescence on the hummingbirds sipping ' +
-                        'nectar as they hover. And so many moments that will stay with you long after you leave—the atavistic ' +
+                        'The flash of scarlet macaw wings amid treetops. The scintillating iridescence on the Blue Morpho Butterfly ' +
+                        'as they flutter near water. And so many moments that will stay with you long after you leave—the atavistic ' +
                         'thrill of hearing howler monkeys call to each other in the trees or the peace of sinking into a pool ' +
                         'at the base of a waterfall deep in the jungle. ' ,
                     dates:{from: '03/24/2019', to: '04/02/2019' },
@@ -109,7 +109,7 @@ const app = Vue.createApp({
                 //return true if we want to keep the trip in the returned list
                 return trip.favorite == true;
             })
-        }
+        },
     }
 })
 
