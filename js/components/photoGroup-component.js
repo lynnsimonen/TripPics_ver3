@@ -33,15 +33,7 @@ app.component('PhotoGroup', {
                   padding="0 0"
                   size="sm"
               >
-              </q-btn>
-              <q-btn
-                  class="q-btn-photo-qty"
-                  label="2"
-                  flat
-                  round
-                  size="xs"
-              >
-              </q-btn>
+              </q-btn>            
             </div>
           </div>
 

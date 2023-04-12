@@ -21,8 +21,7 @@ app.component('PhotoGroupList', {
                 v-for="photoGroup in photoGroups"
                 :photo-group="photoGroup"
                 :key="photoGroup.title"
-            ></photo-group>
-            
+            ></photo-group>            
           </div>
           </q-card-section>
         `,

@@ -21,20 +21,20 @@ app.component('TripList', {
             this.$emit('remove-trip', trip);
         },
         sort(property) {
-            console.log('sorting by', property);
-
             if (property === 'title') {
                 this.trips.sort((a, b) => {
                     if (a.title.toLowerCase() < b.title.toLowerCase()) {
-                        return -1
+                        return -1;
                     } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
                         return 1;
                     }
+                    console.log('sorting by', property);
                     return 0;
                 })
             } else if (property === 'dates.from') {
                 this.trips.sort((a, b) => {
-                    return a.dates.from - b.dates.from;
+                    console.log('sorting by', property);
+                    return new Date(a.dates.from) - new Date(b.dates.from);
                 })
             }
         }

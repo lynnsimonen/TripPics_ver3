@@ -47,11 +47,11 @@ const app = Vue.createApp({
                     favorite: true,
                     photoGroupArray: [
                         {title: 'Day Un',
-                            photosArray: [{photo:'FR_Eiffel.jpg', photoCaption:'Eiffel Tower'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}]},
+                            photosArray: [{photo:'FR_Eiffel.jpg', photoCaption:'Eiffel Tower'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_01.jpg', photoCaption:'Mont Saint Michel'}]},
                         {title: 'Day Deux',
-                            photosArray: [{photo:'FR_Monet.jpg', photoCaption:'Monet Country Home and Pond'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}]},
+                            photosArray: [{photo:'FR_Monet.jpg', photoCaption:'Monet Country Home and Pond'}]},
                         {title: 'Day Trois',
-                            photosArray: [{photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}, {photo:'FR_Nrmdy.jpg', photoCaption:'Normandy Beach'}]},
+                            photosArray: [{photo:'FR_02.jpg', photoCaption:'Metro Stop - Metropolitan'}, {photo:'FR_03.jpg', photoCaption:'Versailles'}]},
                     ]},
                 {title: 'Costa Rica Family Trip - 2019',
                     tripDescription:'Spring Break 2019 - Within the lush and vibrant green of this region lie many discoveries. ' +

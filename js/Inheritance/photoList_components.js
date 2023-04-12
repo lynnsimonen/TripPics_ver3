@@ -5,7 +5,7 @@ app.component('PhotoList', {
         }
     },
     props: {
-       photos: Array,
+        photos: Array,
     },
 
     methods: {},
