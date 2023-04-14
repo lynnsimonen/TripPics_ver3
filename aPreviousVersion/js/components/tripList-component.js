@@ -37,7 +37,7 @@ app.component('TripList', {
                     return new Date(a.dates.from) - new Date(b.dates.from);
                 })
             }
-        }
+        },
     },
 
     //values that are updated and cached if dependencies change. Need to rtn a value. Like values used in data or props.
