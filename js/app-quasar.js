@@ -1,7 +1,7 @@
 app.use(Quasar, {
     config: {
         brand: {
-            primary: '#161190',
+            primary: '#2c8c37',
             secondary: '#f45d01',
             accent: '#9C27B0',
 

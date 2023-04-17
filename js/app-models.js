@@ -1,71 +1,59 @@
-function TripItem(info) {
-    const FAVORITE = {YES: 'yes', NO: 'no'}
+function TravelEvent(travelEvent) {
 
-    //store the photos, etc. inside the trip item.
-    this.info = info;
+    const STATUSES =
+        {FAVORITE: 'favorite', REGULAR:'regular'}
+    //let in2 = 'in';
 
-    //set default favorite
-    this.favorite = FAVORITE.NO;
+    this.travelEvent = travelEvent;
+    //Default Title = ''  which is different = title ? '';
 
-    this.favoriteTrip = function () {
-        this.favorite = FAVORITE.YES;
+    // set the default status
+    this.status = STATUSES.REGULAR;
+
+    // methods
+    this.isFavorite = function () {
+        this.status = STATUSES.FAVORITE;
     }
 
-    this.notFavoriteTrip = function () {
-        this.favorite = FAVORITE.NO;
+    this.isRegular = function () {
+        this.status = STATUSES.REGULAR;
     }
+
+    return travelEvent;
 }
 
 //function Trip(title, tripDescription, dates, key, photoGroupArray) {
-function Trip(title, tripDescription, arrivalDate, returnDate, key) {
+function EventTrip(title, tripDescription, arrivalDate, returnDate, key, favorite ) {
+    this.title = title ?? 'Default Title';
 
-    this.title = title ?? 'No Trip Here';
-    this.tripDescription = tripDescription ?? 'Need Trip Notes Here';
-    this.arrivalDate = arrivalDate ?? 'please choose arrival date';
-    this.departDate = returnDate ?? 'please choose return date';
+    // add any additional properties
+    this.tripDescription = tripDescription ?? '';
+    this.arrivalDate = arrivalDate ?? '';
+    this.returnDate = returnDate ?? '';
     this.key = key ?? '';
+    this.favorite = favorite ?? false;
 }
-Trip.type = "Trip";
+EventTrip.type = "EventTrip";
 
-function Tour(title, activity, arrivalDate, departDate, key){
-    this.title = title ?? 'Tour Name Here';
-    this.activity = activity ?? 'Activity details here';
-    this.arrivalDate = arrivalDate ?? 0;
-    this.departDate = departDate ?? 0;
-    this.key = key ?? '';
+
+class EventExcursion {
+    //class is an object AND the same as a constructor function!!!
+    // Syntactic Sugar
+    title = '';
+    duration = 0;
+    static type = 'EventExcursion';
+    arrivalDateTime = '';
+    key = '';
+    favorite = false;
+
+    constructor(title, duration, arrivalDateTime, key, favorite) {
+        this.title = title ?? '';
+        this.duration = duration ?? 0;
+        this.arrivalDateTime = arrivalDateTime ?? '';
+        this.key = key ?? '';
+        this.favorite = favorite ?? false;
+    }
 }
-Tour.type = "Tour";
-
-
-//     this.photoGroupArray = [{title: '',
-//         photosArray: [{photo: '', photoCaption: ''}]
-//     }];
-// }
-//
-// function addTrip(){
-//     this.tripList.push(this.newTrip);
-//     //clear the form
-//     this.newTrip = {
-//         title: '',
-//         tripDescription: '',
-//         dates:{from:'', to:''},
-//         key: '',
-//     }
-// }
-
-// function deleteTrip(trip){
-//     this.tripList.splice(this.tripList.indexOf(trip),1);
-// }
-
-// function  favoriteList(){
-//     //returns a filtered list
-//     return this.tripList.filter(function(trip){
-//         //return true if we want to keep the trip in the returned list
-//         return trip.favorite == true;
-//     })
-// }
-//
-//
 
 
 

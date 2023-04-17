@@ -7,10 +7,6 @@
   color: #2c8c37;
 }
 
-.q-tabs {
-  color: #2c8c37;
-}
-
 .q-toolbar, h1, h2, h3, h4, h5, h6, .q-tabs {
   font-family: "Paytone One", "Arial Black", sans-serif;
 }
@@ -20,27 +16,13 @@
   align-items: flex-start;
 }
 
-.q-tab-panel {
-  padding-right: 0;
-  padding-left: 0;
-  padding-top: 0;
-}
-
 .toolbar-travelpics {
   color: #2c8c37;
   font-size: 30px;
 }
 
-.q-tabs {
-  font-weight: bolder;
-}
-
 .star-yellow .q-tab__icon, .star-yellow .q-icon {
   color: yellow;
-}
-
-.q-tab__label {
-  text-align: left;
 }
 
 .sort-form {

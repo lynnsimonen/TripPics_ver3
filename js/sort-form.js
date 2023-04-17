@@ -2,7 +2,7 @@ app.component('SortForm', {
     data(){
         let sortOptions = [
             {label: 'Title', value: 'title'},
-            {label: 'Date', value: 'dates.from'},
+            {label: 'Date', value: 'returnDate'},
         ];
         return {
             sortOptions,
@@ -21,16 +21,16 @@ app.component('SortForm', {
         }
     },
     template: `
-    <q-form class="q-flex row q-mb-sm">
-        <q-select
-            v-model="sortValue"
-            :options="sortOptions"
-            @update:model-value="sort"
-            label="Sort By"
-            class="col sort-form"
-            filled
-        />
-    </q-form> 
-    
+      <q-form class="q-flex row q-mb-sm">
+      SORT FORM
+      <q-select
+          v-model="sortValue"
+          :options="sortOptions"
+          @update:model-value="sort"
+          label="Sort By"
+          class="col sort-form"
+          filled
+      />
+      </q-form>    
     `
 })
