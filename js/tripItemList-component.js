@@ -44,7 +44,7 @@ const TripItemListComponent = app.component('TripItemList', {
             this.$emit('remove-trip', item);
         },
         sort(property) {
-            if (property === 'title') {
+            if (property === 'Title') {
                 this.trips.sort((a, b) => {
                     if (a.title.toLowerCase() < b.title.toLowerCase()) {
                         return -1;
@@ -54,7 +54,7 @@ const TripItemListComponent = app.component('TripItemList', {
                     console.log('sorting by', property);
                     return 0;
                 })
-            } else if (property === 'returnDate') {
+            } else if (property === 'Date') {
                 this.trips.sort((a, b) => {
                     console.log('sorting by', property);
                     return new Date(a.returnDate) - new Date(b.returnDate);
@@ -71,6 +71,7 @@ const TripItemListComponent = app.component('TripItemList', {
       <div v-for="item in trips">
         <event-item-card @remove-trip="deleteIt" :item="item"/>
       </div>
+      After List
       </q-list>
     `
 });
@@ -78,17 +79,17 @@ const TripItemListComponent = app.component('TripItemList', {
 
 const TripItemCardComponent = {
     props: {
-        item: {type: EventTrip}
+        item: {type: TravelEvent}
     },
     methods: {
-        ItemCardComponent(item){
-            return 'TripDetails';
+        itemCardComponent(item){
+           return 'TripDetails';
         }
     },
     template:`
       <div class="card-body">
       EVENT ITEM CARD
-      <component :is="ItemCardComponent()" :item="item"/>
+      <component :is="itemCardComponent()" :item="item.travelEvent"/>
       </div>
     `
 };
@@ -132,7 +133,7 @@ app.component('TripDetails', {
             <span class="captains-log col-12">
               Memories and Trip Notes
               
-              <q-btn v-if="item.isFavoriite()"  icon="star-yellow"
+              <q-btn v-if="item.isFavorite()"  icon="star-yellow"
               @click="item.isFavorite()"></q-btn>              
               <q-btn v-else  icon="star-border"
               @click="item.isRegular()"></q-btn>              
