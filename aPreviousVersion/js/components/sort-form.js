@@ -3,6 +3,8 @@ app.component('SortForm', {
         let sortOptions = [
             {label: 'Title', value: 'title'},
             {label: 'Date', value: 'dates.from'},
+            {label: 'Favorites', value:'favorite'}
+
         ];
         return {
             sortOptions,

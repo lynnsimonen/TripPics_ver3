@@ -36,6 +36,16 @@ app.component('TripList', {
                     console.log('sorting by', property);
                     return new Date(a.dates.from) - new Date(b.dates.from);
                 })
+            } else if (property === 'favorite') {
+                this.trips.sort((a,b) => {
+                    if (a.favorite === true && b.favorite === false) {
+                        return -1;
+                    } else if (a.favoriet === false && b.favorite === true) {
+                        return 1;
+                    }
+                    console.log(a,property);
+                    return 0;
+                })
             }
         },
     },
